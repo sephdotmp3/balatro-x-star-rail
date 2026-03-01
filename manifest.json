@@ -1,0 +1,17 @@
+{
+	"id": "balatro-x-star-rail",
+	"name": "Balatro x Star Rail",
+	"display_name": "Star Rail",
+	"author": [
+		"sephdotwmv"
+	],
+	"description": "\"Rules are meant to be broken...\"",
+	"prefix": "bxsr",
+	"main_file": "src/main.lua",
+	"priority": 0,
+	"badge_colour": "3f3f3f",
+	"badge_text_colour": "afafaf",
+	"version": "0.0.0-alpha",
+	"dependencies": [
+	]
+}
