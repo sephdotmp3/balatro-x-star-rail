@@ -19,11 +19,11 @@
 ]]
 
 -- taken from https://github.com/SpectralPack/Cryptid/blob/53ca0bd5acfb6a324564aafa533588691f580d0f/lib/misc.lua#L652
-function Blind:after_play()
+function Blind:bxsr_after_play()
 	if not self.disabled then
 		local obj = self.config.blind
-		if obj.after_play and type(obj.after_play) == "function" then
-			return obj:after_play()
+		if obj.bxsr_after_play and type(obj.bxsr_after_play) == "function" then
+			return obj:bxsr_after_play()
 		end
 	end
 end
@@ -32,5 +32,5 @@ end
 local gfep = G.FUNCS.evaluate_play
 function G.FUNCS.evaluate_play(e)
 	gfep(e)
-	G.GAME.blind:after_play()
+	G.GAME.blind:bxsr_after_play()
 end
