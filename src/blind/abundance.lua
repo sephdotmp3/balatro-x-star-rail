@@ -1,5 +1,5 @@
 --[[
- * main.lua
+ * abundance.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2025 Balatro x Star Rail
@@ -18,6 +18,22 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("src/atlas.lua"))()
-assert(SMODS.load_file("src/blind.lua"))()
-assert(SMODS.load_file("src/joker.lua"))()
+SMODS.Blind {
+    key = "abundance",
+    loc_txt = {
+        name = "The Abundance",
+        text = {
+            "If played hand doesn't",
+            "beat blind, add 33% of",
+            "the played hand's score",
+            "to blind requirements",
+        },
+    },
+    atlas = "blind_abundance",
+    discovered = true,
+    boss = {
+        min = 3,
+    },
+    boss_colour = HEX("eecd31"),
+    -- TODO: write the actual blind effects
+}
