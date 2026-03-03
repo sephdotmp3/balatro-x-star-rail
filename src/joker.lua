@@ -1,5 +1,5 @@
 --[[
- * main.lua
+ * joker.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2025 Balatro x Star Rail
@@ -18,5 +18,5 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("src/atlas.lua"))()
-assert(SMODS.load_file("src/joker.lua"))()
+-- Rare Jokers
+assert(SMODS.load_file("src/joker/along_the_passing_shore.lua"))()

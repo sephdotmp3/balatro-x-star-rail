@@ -1,5 +1,5 @@
 --[[
- * main.lua
+ * along_the_passing_shore.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2025 Balatro x Star Rail
@@ -18,5 +18,23 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("src/atlas.lua"))()
-assert(SMODS.load_file("src/joker.lua"))()
+SMODS.Joker {
+    key = "along_the_passing_shore",
+    loc_txt = {
+        name = "Along The Passing Shore",
+        text = { -- TODO: write the actual description
+            "This is a cool description of",
+            "the ability for this Joker"
+        }
+    },
+    atlas = "joker_along_the_passing_shore",
+    pos = {
+        x = 0,
+        y = 0,
+    },
+    rarity = 3,
+    cost = 5,
+    blueprint_compat = true,
+    perishable_compat = false,
+    -- TODO: write the actual calculate function
+}
