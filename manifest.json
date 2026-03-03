@@ -9,8 +9,8 @@
 	"prefix": "bxsr",
 	"main_file": "src/main.lua",
 	"priority": 0,
-	"badge_colour": "3f3f3f",
-	"badge_text_colour": "afafaf",
+	"badge_colour": "49bce9",
+	"badge_text_colour": "ffffff",
 	"version": "0.0.0-alpha",
 	"dependencies": [
 	]
