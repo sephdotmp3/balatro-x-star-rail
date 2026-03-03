@@ -1,5 +1,5 @@
 --[[
- * main.lua
+ * blind.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2025 Balatro x Star Rail
@@ -18,4 +18,11 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("atlas.lua"))()
+SMODS.Atlas {
+    key = "blind_abundance",
+    path = "abundance.png",
+    px = 34,
+    py = 34,
+    frames = 21,
+    atlas_table = "ANIMATION_ATLAS"
+}
