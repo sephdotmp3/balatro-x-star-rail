@@ -18,4 +18,4 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("atlas/blind.lua"))()
+assert(SMODS.load_file("src/atlas/blind.lua"))()

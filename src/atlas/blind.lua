@@ -20,7 +20,7 @@
 
 SMODS.Atlas {
     key = "blind_abundance",
-    path = "abundance.png",
+    path = "blind/abundance.png",
     px = 34,
     py = 34,
     frames = 21,
