@@ -1,5 +1,5 @@
 --[[
- * main.lua
+ * utils.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,7 +18,19 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("src/atlas.lua"))()
-assert(SMODS.load_file("src/blind.lua"))()
-assert(SMODS.load_file("src/joker.lua"))()
-assert(SMODS.load_file("src/utils.lua"))()
+-- taken from https://github.com/SpectralPack/Cryptid/blob/53ca0bd5acfb6a324564aafa533588691f580d0f/lib/misc.lua#L652
+function Blind:after_play()
+	if not self.disabled then
+		local obj = self.config.blind
+		if obj.after_play and type(obj.after_play) == "function" then
+			return obj:after_play()
+		end
+	end
+end
+
+-- taken from https://github.com/SpectralPack/Cryptid/blob/53ca0bd5acfb6a324564aafa533588691f580d0f/lib/overrides.lua#L152
+local gfep = G.FUNCS.evaluate_play
+function G.FUNCS.evaluate_play(e)
+	gfep(e)
+	G.GAME.blind:after_play()
+end
