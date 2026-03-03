@@ -2,7 +2,7 @@
  * along_the_passing_shore.lua
  * This file is part of Balatro x Star Rail
  *
- * Copyright (C) 2025 Balatro x Star Rail
+ * Copyright (C) 2026 sephdotwmv
  *
  * Balatro x Star Rail is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
