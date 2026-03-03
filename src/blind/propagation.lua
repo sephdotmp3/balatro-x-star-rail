@@ -1,5 +1,5 @@
 --[[
- * blind.lua
+ * propagation.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2025 Balatro x Star Rail
@@ -18,20 +18,21 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-SMODS.Atlas {
-    key = "blind_abundance",
-    path = "blind/abundance.png",
-    px = 34,
-    py = 34,
-    frames = 21,
-    atlas_table = "ANIMATION_ATLAS"
-}
-
-SMODS.Atlas {
-    key = "blind_propagation",
-    path = "blind/propagation.png",
-    px = 34,
-    py = 34,
-    frames = 21,
-    atlas_table = "ANIMATION_ATLAS"
+SMODS.Blind {
+    key = "propagation",
+    loc_txt = {
+        name = "The Propagation",
+        text = {
+            -- TODO: change blind text
+            "Cool multiplying blind",
+            "that I need to think of",
+        },
+    },
+    atlas = "blind_propagation",
+    discovered = true,
+    boss = {
+        min = 3,
+    },
+    boss_colour = HEX("dd5894"),
+    -- TODO: write the actual blind effects
 }

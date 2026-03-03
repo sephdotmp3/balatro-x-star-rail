@@ -19,3 +19,4 @@
 ]]
 
 assert(SMODS.load_file("src/blind/abundance.lua"))()
+assert(SMODS.load_file("src/blind/propagation.lua"))()
