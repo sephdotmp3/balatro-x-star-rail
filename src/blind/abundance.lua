@@ -48,12 +48,8 @@ SMODS.Blind {
     end,
     bxsr_after_play = function(self)
         G.E_MANAGER:add_event(Event({
-    		func = function() 
-                print("Current score:")
-				print(G.GAME.chips)
-                print("Hand score (calculated):")
+    		func = function()
                 local hand_score = G.GAME.chips - self.config.extra.previous_score
-                print(hand_score)
                 if G.GAME.chips < G.GAME.blind.chips and not G.GAME.blind.disabled then
                     print("this REALLY should be triggering")
 			        G.GAME.blind:wiggle()
@@ -70,7 +66,6 @@ SMODS.Blind {
                         end)
 			        }))
 		        end
-                self.config.extra.previous_score = G.GAME.chips
         		return true
  			end
 		}))
