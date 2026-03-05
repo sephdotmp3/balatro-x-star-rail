@@ -30,8 +30,12 @@ SMODS.Blind {
     atlas = "blind_destruction",
     discovered = true,
     boss = {
-        min = 3,
+        min = 4,
     },
     boss_colour = HEX("b4312a"),
-    -- TODO: write the actual blind effects
+    bxsr_after_play = function(self)
+        if not G.GAME.blind.disabled then
+            SMODS.destroy_cards(G.play.cards)
+        end
+    end
 }
