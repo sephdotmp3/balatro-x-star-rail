@@ -40,6 +40,12 @@ SMODS.Blind {
         }
     },
     boss_colour = HEX("eecd31"),
+    set_blind = function(self)
+        self.config.extra.previous_score = 0
+    end,
+    press_play = function(self)
+        self.config.extra.previous_score = G.GAME.chips
+    end,
     bxsr_after_play = function(self)
         G.E_MANAGER:add_event(Event({
     		func = function() 
@@ -51,25 +57,22 @@ SMODS.Blind {
                 if G.GAME.chips < G.GAME.blind.chips and not G.GAME.blind.disabled then
                     print("this REALLY should be triggering")
 			        G.GAME.blind:wiggle()
-
-                    -- TODO: figure out why the hell blind score won't ease
+                    G.GAME.blind.chips = G.GAME.blind.chips + hand_score/3
 			        G.E_MANAGER:add_event(Event({
 				        trigger = 'ease',
 				        blocking = false,
 				        ref_table = G.GAME.blind,
-				        ref_value = 'chips',
-				        ease_to = 1000,
+				        ref_value = 'chip_text',
+				        ease_to = G.GAME.blind.chips,
 				        delay = 0.5,
 				        func = (function(t)
-                            print("HELLO?")
                             return math.floor(t)
                         end)
 			        }))
 		        end
                 self.config.extra.previous_score = G.GAME.chips
-        		return true 
+        		return true
  			end
 		}))
-		
     end
 }
