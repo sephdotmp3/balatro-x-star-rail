@@ -25,8 +25,8 @@ SMODS.Blind {
         text = {
             "If played hand doesn't",
             "beat blind, add 33% of",
-            "the played hand's score",
-            "to blind requirements",
+            "its score to the",
+            "blind's required score",
         },
     },
     atlas = "blind_abundance",
@@ -34,6 +34,42 @@ SMODS.Blind {
     boss = {
         min = 3,
     },
+    config = {
+        extra = {
+            previous_score = 0
+        }
+    },
     boss_colour = HEX("eecd31"),
-    -- TODO: write the actual blind effects
+    bxsr_after_play = function(self)
+        G.E_MANAGER:add_event(Event({
+    		func = function() 
+                print("Current score:")
+				print(G.GAME.chips)
+                print("Hand score (calculated):")
+                local hand_score = G.GAME.chips - self.config.extra.previous_score
+                print(hand_score)
+                if G.GAME.chips < G.GAME.blind.chips and not G.GAME.blind.disabled then
+                    print("this REALLY should be triggering")
+			        G.GAME.blind:wiggle()
+
+                    -- TODO: figure out why the hell blind score won't ease
+			        G.E_MANAGER:add_event(Event({
+				        trigger = 'ease',
+				        blocking = false,
+				        ref_table = G.GAME.blind,
+				        ref_value = 'chips',
+				        ease_to = 1000,
+				        delay = 0.5,
+				        func = (function(t)
+                            print("HELLO?")
+                            return math.floor(t)
+                        end)
+			        }))
+		        end
+                self.config.extra.previous_score = G.GAME.chips
+        		return true 
+ 			end
+		}))
+		
+    end
 }
