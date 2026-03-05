@@ -1,5 +1,5 @@
 --[[
- * blind.lua
+ * abundance.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,29 +18,20 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-SMODS.Atlas {
-    key = "blind_abundance",
-    path = "blind/abundance.png",
-    px = 34,
-    py = 34,
-    frames = 21,
-    atlas_table = "ANIMATION_ATLAS"
-}
-
-SMODS.Atlas {
-    key = "blind_destruction",
-    path = "blind/destruction.png",
-    px = 34,
-    py = 34,
-    frames = 21,
-    atlas_table = "ANIMATION_ATLAS"
-}
-
-SMODS.Atlas {
-    key = "blind_propagation",
-    path = "blind/propagation.png",
-    px = 34,
-    py = 34,
-    frames = 21,
-    atlas_table = "ANIMATION_ATLAS"
+SMODS.Blind {
+    key = "destruction",
+    loc_txt = {
+        name = "The Destruction",
+        text = {
+            "Played cards are",
+            "destroyed after scoring",
+        },
+    },
+    atlas = "blind_destruction",
+    discovered = true,
+    boss = {
+        min = 3,
+    },
+    boss_colour = HEX("b4312a"),
+    -- TODO: write the actual blind effects
 }
