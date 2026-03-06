@@ -22,7 +22,7 @@ SMODS.Joker {
     key = "texture_of_memories",
     loc_txt = {
         name = "Texture of Memories",
-        text = { -- TODO: write the actual description
+        text = {
             "Prevents Death once,",
             "then {C:red}self-destructs",
         }
@@ -36,5 +36,23 @@ SMODS.Joker {
     rarity = 4,
     cost = 10,
     eternal_compat = false,
-    -- TODO: write the actual calculate function
+    calculate = function(self, card, context)
+        if context.game_over and not context.blueprint then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    G.hand_text_area.blind_chips:juice_up()
+                    G.hand_text_area.game_chips:juice_up()
+                    play_sound('tarot1')
+                    card:start_dissolve()
+                    return true
+                end
+            })) 
+            return {
+                message = localize('k_saved_ex'),
+                saved = "Saved by the Remembrance",
+                colour = G.C.RED
+            }
+        end
+    end
+
 }
