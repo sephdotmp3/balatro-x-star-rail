@@ -40,6 +40,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_texture_of_memories",
+  path = "joker/texture_of_memories.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_this_love_forever",
   path = "joker/this_love_forever.png",
   px = 71,

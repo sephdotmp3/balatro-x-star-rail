@@ -1,5 +1,5 @@
 --[[
- * joker.lua
+ * texture_of_memories.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,16 +18,23 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
--- Common Jokers
-assert(SMODS.load_file("src/joker/shadowed_by_night.lua"))()
-
--- Uncommon Jokers
-assert(SMODS.load_file("src/joker/this_love_forever.lua"))()
-assert(SMODS.load_file("src/joker/yet_hope_is_priceless.lua"))()
-
--- Rare Jokers
-assert(SMODS.load_file("src/joker/along_the_passing_shore.lua"))()
-
--- Legendary Jokers
-assert(SMODS.load_file("src/joker/eternal_calculus.lua"))()
-assert(SMODS.load_file("src/joker/texture_of_memories.lua"))()
+SMODS.Joker {
+    key = "texture_of_memories",
+    loc_txt = {
+        name = "Texture of Memories",
+        text = { -- TODO: write the actual description
+            "Prevents Death once,",
+            "then {C:red}self-destructs",
+        }
+    },
+    atlas = "joker_texture_of_memories",
+    pos = {
+        x = 0,
+        y = 0,
+    },
+    discovered = true,
+    rarity = 4,
+    cost = 10,
+    eternal_compat = false,
+    -- TODO: write the actual calculate function
+}
