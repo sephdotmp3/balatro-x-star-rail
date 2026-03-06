@@ -1,5 +1,5 @@
 --[[
- * along_the_passing_shore.lua
+ * yet_hope_is_priceless.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -19,23 +19,22 @@
 ]]
 
 SMODS.Joker {
-    key = "along_the_passing_shore",
+    key = "yet_hope_is_priceless",
     loc_txt = {
-        name = "Along The Passing Shore",
-        text = { -- TODO: write the actual description
-            "This is a cool description of",
-            "the ability for this Joker"
+        name = "Yet Hope Is Priceless",
+        text = { -- TODO: tweak description to use special colours and match any ability changes
+            "Start with -2 hand size,",
+            "gain +1 hand size for every",
+            "play or discard this round"
         }
     },
-    atlas = "joker_along_the_passing_shore",
+    atlas = "joker_yet_hope_is_priceless",
     pos = {
         x = 0,
         y = 0,
     },
     discovered = true,
-    rarity = 3,
-    cost = 5,
-    blueprint_compat = true,
-    perishable_compat = false,
+    rarity = 2,
+    cost = 4,
     -- TODO: write the actual calculate function
 }
