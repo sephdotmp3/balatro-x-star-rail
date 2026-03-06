@@ -41,7 +41,7 @@ SMODS.Joker {
     },
     discovered = true,
     rarity = 4,
-    cost = 10,
+    cost = 20,
     eternal_compat = false,
     calculate = function(self, card, context)
         if context.game_over and not context.blueprint then
