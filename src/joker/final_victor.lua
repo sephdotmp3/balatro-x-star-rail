@@ -1,5 +1,5 @@
 --[[
- * joker.lua
+ * final_victor.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,17 +18,23 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
--- Common Jokers
-assert(SMODS.load_file("src/joker/shadowed_by_night.lua"))()
-
--- Uncommon Jokers
-assert(SMODS.load_file("src/joker/final_victor.lua"))()
-assert(SMODS.load_file("src/joker/this_love_forever.lua"))()
-assert(SMODS.load_file("src/joker/yet_hope_is_priceless.lua"))()
-
--- Rare Jokers
-assert(SMODS.load_file("src/joker/along_the_passing_shore.lua"))()
-
--- Legendary Jokers
-assert(SMODS.load_file("src/joker/eternal_calculus.lua"))()
-assert(SMODS.load_file("src/joker/texture_of_memories.lua"))()
+SMODS.Joker {
+    key = "final_victor",
+    loc_txt = {
+        name = "Final Victor",
+        text = { -- TODO: add card formatting
+            "Retrigger all scored cards",
+            "with Spade suit"
+        }
+    },
+    atlas = "joker_final_victor",
+    pos = {
+        x = 0,
+        y = 0,
+    },
+    discovered = true,
+    rarity = 2,
+    cost = 5,
+    blueprint_compat = true,
+    -- TODO: write the actual calculate function
+}
