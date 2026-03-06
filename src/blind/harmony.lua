@@ -33,5 +33,31 @@ SMODS.Blind {
         min = 3,
     },
     boss_colour = HEX("9e87d7"),
-    -- TODO: write the actual blind effects
+    debuff_hand = function(self, cards, hand, handname, check)
+        local suit = nil
+        local rank = nil
+        for _, card in pairs(cards) do
+            if SMODS.has_no_suit(card) or SMODS.has_no_rank(card) or SMODS.has_any_suit(card) then
+                goto continue
+            elseif suit == nil and rank == nil then
+                print("first card:")
+                print(card.base.suit)
+                suit = card.base.suit
+                print(card:get_id())
+                rank = card:get_id()
+            elseif card.base.suit ~= suit and card:get_id() ~= rank then
+                print("other card:")
+                print(card.base.suit)
+                print(card:get_id())
+                return true
+            end
+
+            -- may god smite the creator of lua for not including the continue statement. my lord, i hate this language.
+            ::continue::
+        end
+        return false
+    end,
+    get_loc_debuff_text = function(self)
+        return "All played cards must have the same rank or suit"
+    end
 }
