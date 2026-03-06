@@ -43,7 +43,7 @@ SMODS.Joker {
     config = {
         extra = {
             xmult = 1,
-            xmult_gain = 0.15,
+            xmult_gain = 0.1,
         }
     },
     discovered = true,
