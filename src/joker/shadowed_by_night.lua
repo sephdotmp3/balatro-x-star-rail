@@ -1,5 +1,5 @@
 --[[
- * joker.lua
+ * shadowed_by_night.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,23 +18,24 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-SMODS.Atlas {
-  key = "joker_along_the_passing_shore",
-  path = "joker/along_the_passing_shore.png",
-  px = 71,
-  py = 95,
-}
-
-SMODS.Atlas {
-  key = "joker_shadowed_by_night",
-  path = "joker/shadowed_by_night.png",
-  px = 71,
-  py = 95,
-}
-
-SMODS.Atlas {
-  key = "joker_yet_hope_is_priceless",
-  path = "joker/yet_hope_is_priceless.png",
-  px = 71,
-  py = 95,
+SMODS.Joker {
+    key = "shadowed_by_night",
+    loc_txt = {
+        name = "Shadowed By Night",
+        text = { -- add card formatting
+            "Every card in a High Card",
+            "gives X2 Mult when scored",
+        }
+    },
+    atlas = "joker_shadowed_by_night",
+    pos = {
+        x = 0,
+        y = 0,
+    },
+    discovered = true,
+    rarity = 1,
+    cost = 3,
+    blueprint_compat = true,
+    perishable_compat = false,
+    -- TODO: write the actual calculate function
 }

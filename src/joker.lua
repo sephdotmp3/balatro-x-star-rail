@@ -18,6 +18,9 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
+-- Common Jokers
+assert(SMODS.load_file("src/joker/shadowed_by_night.lua"))()
+
 -- Uncommon Jokers
 assert(SMODS.load_file("src/joker/yet_hope_is_priceless.lua"))()
 
