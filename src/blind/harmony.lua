@@ -1,5 +1,5 @@
 --[[
- * blind.lua
+ * harmony.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,7 +18,20 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("src/blind/abundance.lua"))()
-assert(SMODS.load_file("src/blind/destruction.lua"))()
-assert(SMODS.load_file("src/blind/harmony.lua"))()
-assert(SMODS.load_file("src/blind/propagation.lua"))()
+SMODS.Blind {
+    key = "harmony",
+    loc_txt = {
+        name = "The Harmony",
+        text = {
+            "All played cards must have",
+            "the same rank or suit",
+        },
+    },
+    atlas = "blind_harmony",
+    discovered = true,
+    boss = {
+        min = 3,
+    },
+    boss_colour = HEX("9e87d7"),
+    -- TODO: write the actual blind effects
+}
