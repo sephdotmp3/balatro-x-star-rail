@@ -40,15 +40,9 @@ SMODS.Blind {
             if SMODS.has_no_suit(card) or SMODS.has_no_rank(card) or SMODS.has_any_suit(card) then
                 goto continue
             elseif suit == nil and rank == nil then
-                print("first card:")
-                print(card.base.suit)
                 suit = card.base.suit
-                print(card:get_id())
                 rank = card:get_id()
             elseif card.base.suit ~= suit and card:get_id() ~= rank then
-                print("other card:")
-                print(card.base.suit)
-                print(card:get_id())
                 return true
             end
 
