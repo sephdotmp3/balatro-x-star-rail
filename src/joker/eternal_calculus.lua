@@ -42,7 +42,7 @@ SMODS.Joker {
     },
     config = {
         extra = {
-            xmult = 0,
+            xmult = 1,
             xmult_gain = 0.15,
         }
     },
@@ -51,7 +51,23 @@ SMODS.Joker {
     cost = 10,
     blueprint_compat = true,
     perishable_compat = false,
-    -- TODO: write the actual calculate function
+    calculate = function (self, card, context)
+        if context.before and not context.blueprint then
+            SMODS.scale_card(card, {
+	            ref_table = card.ability.extra,
+                ref_value = "xmult",
+                scalar_value = "xmult_gain",
+                operation = function (ref_table, ref_value, initial, change)
+                    ref_table[ref_value] = initial + change*#context.full_hand
+                end
+            })
+        elseif context.joker_main and context.cardarea == G.jokers then
+            return {
+                xmult = card.ability.extra.xmult,
+                colour = G.C.XMULT
+            }
+        end
+    end,
     loc_vars = function (self, info_queue, card)
         return {
             vars = {
