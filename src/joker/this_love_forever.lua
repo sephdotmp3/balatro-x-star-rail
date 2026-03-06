@@ -22,7 +22,7 @@ SMODS.Joker {
     key = "this_love_forever",
     loc_txt = {
         name = "This Love, Forever",
-        text = { -- add card formatting
+        text = { -- TODO: add card formatting
             "This Joker gains +3 Mult",
             "for every Booster pack opened",
         }

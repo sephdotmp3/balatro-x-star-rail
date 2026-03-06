@@ -22,7 +22,7 @@ SMODS.Joker {
     key = "shadowed_by_night",
     loc_txt = {
         name = "Shadowed By Night",
-        text = { -- add card formatting
+        text = { -- TODO: add card formatting
             "Every card in a High Card",
             "gives X2 Mult when scored",
         }
