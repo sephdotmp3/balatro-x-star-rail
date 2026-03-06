@@ -33,6 +33,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_this_love_forever",
+  path = "joker/this_love_forever.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_yet_hope_is_priceless",
   path = "joker/yet_hope_is_priceless.png",
   px = 71,

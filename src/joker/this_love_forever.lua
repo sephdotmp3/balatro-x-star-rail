@@ -1,5 +1,5 @@
 --[[
- * joker.lua
+ * this_love_forever.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,12 +18,24 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
--- Common Jokers
-assert(SMODS.load_file("src/joker/shadowed_by_night.lua"))()
-
--- Uncommon Jokers
-assert(SMODS.load_file("src/joker/this_love_forever.lua"))()
-assert(SMODS.load_file("src/joker/yet_hope_is_priceless.lua"))()
-
--- Rare Jokers
-assert(SMODS.load_file("src/joker/along_the_passing_shore.lua"))()
+SMODS.Joker {
+    key = "this_love_forever",
+    loc_txt = {
+        name = "This Love, Forever",
+        text = { -- add card formatting
+            "This Joker gains +3 Mult",
+            "for every Booster pack opened",
+        }
+    },
+    atlas = "joker_this_love_forever",
+    pos = {
+        x = 0,
+        y = 0,
+    },
+    discovered = true,
+    rarity = 2,
+    cost = 5,
+    blueprint_compat = true,
+    perishable_compat = false,
+    -- TODO: write the actual calculate function
+}
