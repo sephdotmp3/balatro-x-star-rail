@@ -24,7 +24,14 @@ SMODS.Joker {
         name = "Texture of Memories",
         text = {
             "Prevents Death once,",
-            "then {C:red}self-destructs",
+            "then {C:red}self-destructs{}",
+            "{s:0.8,C:inactive}The universe is like a wasteland filled with rubbish,",
+            "{s:0.8,C:inactive}where occasional treasures lie undiscovered.",
+            "{s:0.8,C:inactive}THEY sift through the cracks of yesterday, seeking seeds of memory.",
+            "{s:0.8,C:inactive}...If a new life is to be born, its seed has to be dead.",
+            "{s:0.8,C:inactive}Precious stones of pink, blue, and white are brought forth,",
+            "{s:0.8,C:inactive}twinkling gently in THEIR seed plot,",
+            "{s:0.8,C:inactive}even though the universe holds onto its enigmatic silence.",
         }
     },
     atlas = "joker_texture_of_memories",
