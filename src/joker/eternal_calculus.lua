@@ -22,17 +22,17 @@ SMODS.Joker {
     key = "eternal_calculus",
     loc_txt = {
         name = "Eternal Calculus",
-        text = { -- TODO: add card formatting - this one REALLY needs it
-            "This Joker gains X0.15 Mult",
+        text = {
+            "This Joker gains {X:mult,C:white}X#2#{} Mult",
             "for every card played",
-
-            "Eternally suspended in the void,",
-            "Streams of shimmering data flood into THEIR mind.",
-            "Turning all things past and future into symbols,",
-            "THEY deduce the end from the beginning.",
-            "Knowledge, answers, truths...",
-            "In the mist of information, a brilliant light arises,",
-            "And everything becomes clear to THEM.",
+            "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult){}",
+            "{s:0.8,C:inactive}Eternally suspended in the void,",
+            "{s:0.8,C:inactive}Streams of shimmering data flood into THEIR mind.",
+            "{s:0.8,C:inactive}Turning all things past and future into symbols,",
+            "{s:0.8,C:inactive}THEY deduce the end from the beginning.",
+            "{s:0.8,C:inactive}Knowledge, answers, truths...",
+            "{s:0.8,C:inactive}In the mist of information, a brilliant light arises,",
+            "{s:0.8,C:inactive}And everything becomes clear to THEM.",
         }
     },
     atlas = "joker_eternal_calculus",
@@ -40,10 +40,24 @@ SMODS.Joker {
         x = 0,
         y = 0,
     },
+    config = {
+        extra = {
+            xmult = 0,
+            xmult_gain = 0.15,
+        }
+    },
     discovered = true,
     rarity = 4,
     cost = 10,
     blueprint_compat = true,
     perishable_compat = false,
     -- TODO: write the actual calculate function
+    loc_vars = function (self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.xmult,
+                card.ability.extra.xmult_gain
+            }
+        }
+    end
 }
