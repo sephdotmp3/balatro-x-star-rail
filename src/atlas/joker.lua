@@ -41,7 +41,7 @@ SMODS.Atlas {
 
 SMODS.Atlas {
   key = "joker_inherently_unjust_destiny",
-  path = "joker/joker_inherently_unjust_destiny.png",
+  path = "joker/inherently_unjust_destiny.png",
   px = 71,
   py = 95,
 }
