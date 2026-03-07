@@ -1,5 +1,5 @@
 --[[
- * blind.lua
+ * elation.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,8 +18,22 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("src/blind/abundance.lua"))()
-assert(SMODS.load_file("src/blind/destruction.lua"))()
-assert(SMODS.load_file("src/blind/elation.lua"))()
-assert(SMODS.load_file("src/blind/harmony.lua"))()
-assert(SMODS.load_file("src/blind/propagation.lua"))()
+SMODS.Blind {
+    key = "elation",
+    loc_txt = {
+        name = "The Elation",
+        text = {
+            "Start with a random number",
+            "of hands and discards,",
+            "reward and required score",
+            "is randomized",
+        },
+    },
+    atlas = "blind_elation",
+    discovered = true,
+    boss = {
+        min = 2,
+    },
+    boss_colour = HEX("e177bb"),
+    -- TODO: write the actual blind effects
+}
