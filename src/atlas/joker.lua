@@ -40,6 +40,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_inherently_unjust_destiny",
+  path = "joker/joker_inherently_unjust_destiny.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_shadowed_by_night",
   path = "joker/shadowed_by_night.png",
   px = 71,
