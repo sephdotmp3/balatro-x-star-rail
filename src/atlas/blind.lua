@@ -64,6 +64,15 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+    key = "blind_nihility",
+    path = "blind/nihility.png",
+    px = 34,
+    py = 34,
+    frames = 21,
+    atlas_table = "ANIMATION_ATLAS"
+}
+
+SMODS.Atlas {
     key = "blind_propagation",
     path = "blind/propagation.png",
     px = 34,
