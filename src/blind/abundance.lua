@@ -51,7 +51,6 @@ SMODS.Blind {
     		func = function()
                 local hand_score = G.GAME.chips - self.config.extra.previous_score
                 if G.GAME.chips < G.GAME.blind.chips and not G.GAME.blind.disabled then
-                    print("this REALLY should be triggering")
 			        G.GAME.blind:wiggle()
                     G.GAME.blind.chips = G.GAME.blind.chips + hand_score/3
 			        G.E_MANAGER:add_event(Event({
