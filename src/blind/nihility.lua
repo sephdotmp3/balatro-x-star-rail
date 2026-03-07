@@ -23,9 +23,8 @@ SMODS.Blind {
     loc_txt = {
         name = "The Nihility",
         text = {
-            -- TODO: text formatting
-            "Playing a (most played poker hand)",
-            "debuffs a random Joker,",
+            "Playing a #1#",
+            "debuffs a random Joker",
             "during the next hand"
         },
     },
@@ -35,5 +34,14 @@ SMODS.Blind {
         min = 3,
     },
     boss_colour = HEX("2abece"),
-    -- TODO: write the actual blind effects
+    loc_vars = function(self)
+        return {
+            vars = {
+                localize(G.GAME.current_round.most_played_poker_hand, 'poker_hands')
+            }
+        }
+    end,
+    collection_loc_vars = function(self)
+        return { vars = { localize('ph_most_played') } }
+    end,
 }
