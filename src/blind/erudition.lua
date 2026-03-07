@@ -1,5 +1,5 @@
 --[[
- * blind.lua
+ * erudition.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,9 +18,21 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("src/blind/abundance.lua"))()
-assert(SMODS.load_file("src/blind/destruction.lua"))()
-assert(SMODS.load_file("src/blind/elation.lua"))()
-assert(SMODS.load_file("src/blind/erudition.lua"))()
-assert(SMODS.load_file("src/blind/harmony.lua"))()
-assert(SMODS.load_file("src/blind/propagation.lua"))()
+SMODS.Blind {
+    key = "erudition",
+    loc_txt = {
+        name = "The Erudition",
+        text = {
+            -- TODO: change blind text
+            "Cool, intelligent blind",
+            "that I need to think of",
+        },
+    },
+    atlas = "blind_erudition",
+    discovered = true,
+    boss = {
+        min = 3,
+    },
+    boss_colour = HEX("20b082"),
+    -- TODO: write the actual blind effects
+}
