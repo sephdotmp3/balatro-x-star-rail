@@ -1,5 +1,5 @@
 --[[
- * blind.lua
+ * preservation.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,13 +18,35 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("src/blind/abundance.lua"))()
-assert(SMODS.load_file("src/blind/destruction.lua"))()
-assert(SMODS.load_file("src/blind/elation.lua"))()
-assert(SMODS.load_file("src/blind/erudition.lua"))()
-assert(SMODS.load_file("src/blind/harmony.lua"))()
-assert(SMODS.load_file("src/blind/nihility.lua"))()
-assert(SMODS.load_file("src/blind/preservation.lua"))()
-assert(SMODS.load_file("src/blind/propagation.lua"))()
-assert(SMODS.load_file("src/blind/remembrance.lua"))()
-assert(SMODS.load_file("src/blind/the_hunt.lua"))()
+SMODS.Blind {
+    key = "preservation",
+    loc_txt = {
+        name = "The Preservation",
+        text = {
+            "Every $5 below $15",
+            "increases blind's required",
+            "score by #1#"
+        },
+    },
+    atlas = "blind_preservation",
+    discovered = true,
+    boss = {
+        min = 3,
+    },
+    boss_colour = HEX("3861c2"),
+    loc_vars = function(self)
+        return {
+            vars = {
+                "1X base score" -- TODO: replace with actual base score
+            }
+        }
+    end,
+    collection_loc_vars = function(self)
+        return {
+            vars = {
+                "1X base score"
+            }
+        }
+    end,
+    -- TODO: write the actual blind effects
+}
