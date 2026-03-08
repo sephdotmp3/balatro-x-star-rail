@@ -35,5 +35,42 @@ SMODS.Blind {
         min = 2,
     },
     boss_colour = HEX("e177bb"),
-    -- TODO: write the actual blind effects
+    set_blind = function(self)
+        local max_hands = G.GAME.round_resets.hands + 2
+        local max_discards = G.GAME.current_round.discards_left + 2
+
+        local hands_random = pseudorandom("sampo_the_fool")
+        local discards_random = pseudorandom("giovanni_the_fool")
+
+        local new_hands = math.ceil(max_hands*hands_random)
+        local new_discards = math.floor((max_discards+1)*discards_random)
+
+        local hands_change = new_hands - G.GAME.round_resets.hands
+        if hands_change < 0 then
+            self.hands_sub = 0 - hands_change
+        end
+        if hands_change ~= 0 then
+            ease_hands_played(hands_change)
+        end
+
+        local discards_change = new_discards - G.GAME.current_round.discards_left
+        if discards_change < 0 then
+            self.discards_sub = 0 - discards_change
+        end
+        if discards_change ~= 0 then
+            ease_discard(discards_change)
+        end
+
+        local reward_random = pseudorandom("sparkle_the_fool")
+
+        -- taken from polterworx
+		G.GAME.blind.dollars = math.floor(11*reward_random)
+		G.GAME.current_round.dollars_to_be_earned = G.GAME.blind.dollars > 8 and ('$' .. G.GAME.blind.dollars) or (string.rep(localize('$'), G.GAME.blind.dollars)..'')
+		G.HUD_blind:get_UIE_by_ID("dollars_to_be_earned").config.object:update_text()
+
+        -- TODO: blind size scaling
+    end,
+    disable = function (self)
+        -- TODO: revert everything that's negative
+    end
 }
