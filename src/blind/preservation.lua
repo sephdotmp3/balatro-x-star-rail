@@ -23,9 +23,9 @@ SMODS.Blind {
     loc_txt = {
         name = "The Preservation",
         text = {
-            "Every $5 below $15",
+            "Every $#2# below $#1#",
             "increases blind's required",
-            "score by #1#"
+            "score by #3#"
         },
     },
     atlas = "blind_preservation",
@@ -33,20 +33,41 @@ SMODS.Blind {
     boss = {
         min = 3,
     },
+    config = {
+        extra = {
+            -- note that dollars_threshold means that's when the blind becomes 2X base,
+            -- even though this blind's minimum score caps at 1X base
+            dollars_threshold = 20,
+            dollars_to_base_ratio = 5,
+        }
+    },
     boss_colour = HEX("3861c2"),
+    set_blind = function(self)
+        G.GAME.blind.mult = math.max(2 + self.config.extra.dollars_threshold/self.config.extra.dollars_to_base_ratio - (G.GAME.dollars/self.config.extra.dollars_to_base_ratio), 1)
+
+        G.GAME.blind.chips = G.GAME.blind.chips / 2 * G.GAME.blind.mult
+        G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+    end,
+    disable = function (self)
+        G.GAME.blind.chips = math.min(G.GAME.blind.chips / G.GAME.blind.mult * 2, G.GAME.blind.chips)
+        G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+    end,
     loc_vars = function(self)
         return {
             vars = {
-                "1X base score" -- TODO: replace with actual base score
+                self.config.extra.dollars_threshold,
+                self.config.extra.dollars_to_base_ratio,
+                get_blind_amount(G.GAME.round_resets.ante)
             }
         }
     end,
     collection_loc_vars = function(self)
         return {
             vars = {
+                self.config.extra.dollars_threshold,
+                self.config.extra.dollars_to_base_ratio,
                 "1X base score"
             }
         }
     end,
-    -- TODO: write the actual blind effects
 }
