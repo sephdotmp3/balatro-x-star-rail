@@ -89,3 +89,12 @@ SMODS.Atlas {
     frames = 21,
     atlas_table = "ANIMATION_ATLAS"
 }
+
+SMODS.Atlas {
+    key = "blind_the_hunt",
+    path = "blind/the_hunt.png",
+    px = 34,
+    py = 34,
+    frames = 21,
+    atlas_table = "ANIMATION_ATLAS"
+}
