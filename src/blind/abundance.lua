@@ -24,7 +24,7 @@ SMODS.Blind {
         name = "The Abundance",
         text = {
             "If played hand doesn't",
-            "beat blind, add 33% of",
+            "beat blind, add #1#% of",
             "its score to the",
             "blind's required score",
         },
@@ -36,6 +36,7 @@ SMODS.Blind {
     },
     config = {
         extra = {
+            regain_percent = 50,
             previous_score = 0
         }
     },
@@ -52,7 +53,7 @@ SMODS.Blind {
                 local hand_score = G.GAME.chips - self.config.extra.previous_score
                 if G.GAME.chips < G.GAME.blind.chips and not G.GAME.blind.disabled then
 			        G.GAME.blind:wiggle()
-                    G.GAME.blind.chips = G.GAME.blind.chips + hand_score/3
+                    G.GAME.blind.chips = G.GAME.blind.chips + hand_score * self.config.extra.regain_percent / 100
 			        G.E_MANAGER:add_event(Event({
 				        trigger = 'ease',
 				        blocking = false,
@@ -68,5 +69,19 @@ SMODS.Blind {
         		return true
  			end
 		}))
-    end
+    end,
+    loc_vars = function(self)
+        return {
+            vars = {
+                self.config.extra.regain_percent
+            }
+        }
+    end,
+    collection_loc_vars = function(self)
+        return {
+            vars = {
+                self.config.extra.regain_percent
+            }
+        }
+    end,
 }
