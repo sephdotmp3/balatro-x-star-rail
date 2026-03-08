@@ -1,5 +1,5 @@
 --[[
- * blind.lua
+ * remembrance.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,11 +18,21 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("src/blind/abundance.lua"))()
-assert(SMODS.load_file("src/blind/destruction.lua"))()
-assert(SMODS.load_file("src/blind/elation.lua"))()
-assert(SMODS.load_file("src/blind/erudition.lua"))()
-assert(SMODS.load_file("src/blind/harmony.lua"))()
-assert(SMODS.load_file("src/blind/nihility.lua"))()
-assert(SMODS.load_file("src/blind/propagation.lua"))()
-assert(SMODS.load_file("src/blind/remembrance.lua"))()
+SMODS.Blind {
+    key = "remembrance",
+    loc_txt = {
+        name = "The Remembrance",
+        text = {
+            -- TODO: change blind text
+            "Cool memory-related blind",
+            "that I need to think of",
+        },
+    },
+    atlas = "blind_remembrance",
+    discovered = true,
+    boss = {
+        min = 3,
+    },
+    boss_colour = HEX("cf712f"),
+    -- TODO: write the actual blind effects
+}
