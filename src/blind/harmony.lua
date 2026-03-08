@@ -36,18 +36,30 @@ SMODS.Blind {
     debuff_hand = function(self, cards, hand, handname, check)
         local suit = nil
         local rank = nil
+        local suit_violated = nil
+        local rank_violated = nil
         for _, card in pairs(cards) do
-            if SMODS.has_no_suit(card) or SMODS.has_no_rank(card) or SMODS.has_any_suit(card) then
-                goto continue
-            elseif suit == nil and rank == nil then
-                suit = card.base.suit
-                rank = card:get_id()
-            elseif card.base.suit ~= suit and card:get_id() ~= rank then
-                return true
+            if not suit_violated then
+                if not SMODS.has_no_suit(card) and not SMODS.has_any_suit(card) then
+                    if suit == nil then
+                        suit = card.base.suit
+                    end
+                    suit_violated = card.base.suit ~= suit
+                end
             end
 
-            -- may god smite the creator of lua for not including the continue statement. my lord, i hate this language.
-            ::continue::
+            if not rank_violated then
+                if not SMODS.has_no_rank(card) then
+                    if rank == nil then
+                        rank = card:get_id()
+                    end
+                    rank_violated = card:get_id() ~= rank
+                end
+            end
+
+            if suit_violated and rank_violated then
+                return true
+            end
         end
         return false
     end,
