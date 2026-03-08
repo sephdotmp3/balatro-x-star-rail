@@ -73,7 +73,13 @@ SMODS.Blind {
 		G.GAME.current_round.dollars_to_be_earned = G.GAME.blind.dollars > 8 and ('$' .. G.GAME.blind.dollars) or (string.rep(localize('$'), G.GAME.blind.dollars)..'')
 		G.HUD_blind:get_UIE_by_ID("dollars_to_be_earned").config.object:update_text()
 
-        -- TODO: blind size scaling
+        local max_size = math.min(new_hands+new_discards, 5)
+        local size_random = pseudorandom("sparxie_the_fool")
+
+        G.GAME.blind.mult = (max_size-1)*size_random+1
+
+        G.GAME.blind.chips = G.GAME.blind.chips / 2 * G.GAME.blind.mult
+        G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
     end,
     disable = function (self)
         if self.hands_sub > 0 then
@@ -87,6 +93,8 @@ SMODS.Blind {
 		    G.GAME.current_round.dollars_to_be_earned = G.GAME.blind.dollars > 8 and ('$' .. G.GAME.blind.dollars) or (string.rep(localize('$'), G.GAME.blind.dollars)..'')
 		    G.HUD_blind:get_UIE_by_ID("dollars_to_be_earned").config.object:update_text()
         end
-        -- TODO: revert blind size
+
+        G.GAME.blind.chips = G.GAME.blind.chips / G.GAME.blind.mult * 2
+        G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
     end
 }
