@@ -94,7 +94,7 @@ SMODS.Blind {
 		    G.HUD_blind:get_UIE_by_ID("dollars_to_be_earned").config.object:update_text()
         end
 
-        G.GAME.blind.chips = G.GAME.blind.chips / G.GAME.blind.mult * 2
+        G.GAME.blind.chips = math.min(G.GAME.blind.chips / G.GAME.blind.mult * 2, G.GAME.blind.chips)
         G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
     end
 }
