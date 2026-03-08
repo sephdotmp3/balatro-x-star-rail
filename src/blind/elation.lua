@@ -36,8 +36,8 @@ SMODS.Blind {
     },
     boss_colour = HEX("e177bb"),
     set_blind = function(self)
-        local max_hands = G.GAME.round_resets.hands + 2
-        local max_discards = G.GAME.current_round.discards_left + 2
+        local max_hands = math.floor(G.GAME.round_resets.hands*1.5)
+        local max_discards = math.floor(G.GAME.current_round.discards_left*1.5)
 
         local hands_random = pseudorandom("sampo_the_fool")
         local discards_random = pseudorandom("giovanni_the_fool")
@@ -48,6 +48,8 @@ SMODS.Blind {
         local hands_change = new_hands - G.GAME.round_resets.hands
         if hands_change < 0 then
             self.hands_sub = 0 - hands_change
+        else
+            self.hands_sub = 0
         end
         if hands_change ~= 0 then
             ease_hands_played(hands_change)
@@ -56,7 +58,10 @@ SMODS.Blind {
         local discards_change = new_discards - G.GAME.current_round.discards_left
         if discards_change < 0 then
             self.discards_sub = 0 - discards_change
+        else
+            self.discards_sub = 0
         end
+
         if discards_change ~= 0 then
             ease_discard(discards_change)
         end
@@ -71,6 +76,17 @@ SMODS.Blind {
         -- TODO: blind size scaling
     end,
     disable = function (self)
-        -- TODO: revert everything that's negative
+        if self.hands_sub > 0 then
+            ease_hands_played(self.hands_sub)
+        end
+        if self.discards_sub > 0 then
+            ease_discard(self.discards_sub)
+        end
+        if G.GAME.blind.dollars < 5 then
+		    G.GAME.blind.dollars = 5
+		    G.GAME.current_round.dollars_to_be_earned = G.GAME.blind.dollars > 8 and ('$' .. G.GAME.blind.dollars) or (string.rep(localize('$'), G.GAME.blind.dollars)..'')
+		    G.HUD_blind:get_UIE_by_ID("dollars_to_be_earned").config.object:update_text()
+        end
+        -- TODO: revert blind size
     end
 }
