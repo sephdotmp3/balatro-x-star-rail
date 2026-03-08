@@ -34,6 +34,7 @@ SMODS.Blind {
         min = 3,
     },
     boss_colour = HEX("2abece"),
+    -- TODO: add functionality
     loc_vars = function(self)
         return {
             vars = {
@@ -42,6 +43,10 @@ SMODS.Blind {
         }
     end,
     collection_loc_vars = function(self)
-        return { vars = { localize('ph_most_played') } }
+        return {
+            vars = {
+                localize('ph_most_played')
+            }
+        }
     end,
 }
