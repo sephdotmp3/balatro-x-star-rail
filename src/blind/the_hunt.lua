@@ -24,29 +24,55 @@ SMODS.Blind {
         name = "The Hunt",
         text = {
             "A #1# is worth",
-            "1.5x, but all other",
-            "hands are worth 0.65x"
+            "#2#x, but all other",
+            "hands are worth #3#x"
         },
     },
     atlas = "blind_the_hunt",
     discovered = true,
     boss = {
-        min = 3,
+        min = 4,
+    },
+    config = {
+        extra = {
+            targeted_hand_multiplier = 0.4,
+            other_hands_multiplier = 1.5,
+        }
     },
     boss_colour = HEX("6dac15"),
+    calculate = function (self, blind, context)
+        if context.final_scoring_step then
+            if context.scoring_name == G.GAME.current_round.most_played_poker_hand and not G.GAME.blind.disabled then
+                return {
+                    xmult = self.config.extra.targeted_hand_multiplier,
+                    remove_default_message = true,
+                    colour = G.C.MULT,
+                    message = tostring(self.config.extra.targeted_hand_multiplier).."x "..localize('k_mult'),
+                    sound = "bxsr_the_hunt_targeted"
+                }
+            elseif context.scoring_name ~= G.GAME.current_round.most_played_poker_hand then
+                return {
+                    xmult = self.config.extra.other_hands_multiplier
+                }
+            end
+        end
+    end,
     loc_vars = function(self)
         return {
             vars = {
-                "(random hand)" -- TODO: replace with config entry
+                G.GAME.current_round.most_played_poker_hand,
+                self.config.extra.targeted_hand_multiplier,
+                self.config.extra.other_hands_multiplier
             }
         }
     end,
     collection_loc_vars = function(self)
         return {
             vars = {
-                "(random hand)"
+                localize("ph_most_played"),
+                self.config.extra.targeted_hand_multiplier,
+                self.config.extra.other_hands_multiplier
             }
         }
     end,
-    -- TODO: write the actual blind effects
 }
