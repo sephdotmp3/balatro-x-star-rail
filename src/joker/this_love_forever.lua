@@ -22,9 +22,10 @@ SMODS.Joker {
     key = "this_love_forever",
     loc_txt = {
         name = "This Love, Forever",
-        text = { -- TODO: add card formatting
-            "This Joker gains +3 Mult",
+        text = {
+            "This Joker gains {C:mult}+#2#{} Mult",
             "for every Booster pack opened",
+            "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}",
         }
     },
     atlas = "joker_this_love_forever",
@@ -32,10 +33,24 @@ SMODS.Joker {
         x = 0,
         y = 0,
     },
+    config = {
+        extra = {
+            mult = 0,
+            mult_gain = 2,
+        }
+    },
     discovered = true,
-    rarity = 2,
+    rarity = 1,
     cost = 5,
     blueprint_compat = true,
     perishable_compat = false,
     -- TODO: write the actual calculate function
+    loc_vars = function (self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.mult,
+                card.ability.extra.mult_gain
+            }
+        }
+    end
 }

@@ -20,12 +20,12 @@
 
 -- Common Jokers
 assert(SMODS.load_file("src/joker/shadowed_by_night.lua"))()
+assert(SMODS.load_file("src/joker/this_love_forever.lua"))()
 
 -- Uncommon Jokers
 assert(SMODS.load_file("src/joker/final_victor.lua"))()
 assert(SMODS.load_file("src/joker/in_the_night.lua"))()
 assert(SMODS.load_file("src/joker/inherently_unjust_destiny.lua"))()
-assert(SMODS.load_file("src/joker/this_love_forever.lua"))()
 assert(SMODS.load_file("src/joker/yet_hope_is_priceless.lua"))()
 
 -- Rare Jokers
