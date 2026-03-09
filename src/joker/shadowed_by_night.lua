@@ -22,9 +22,9 @@ SMODS.Joker {
     key = "shadowed_by_night",
     loc_txt = {
         name = "Shadowed By Night",
-        text = { -- TODO: add card formatting
-            "Every card in a High Card",
-            "gives X2 Mult when scored",
+        text = {
+            "Every card in a {C:attention}High Card{}",
+            "gives {X:mult,C:white}X#1#{} Mult when scored",
         }
     },
     atlas = "joker_shadowed_by_night",
@@ -32,10 +32,29 @@ SMODS.Joker {
         x = 0,
         y = 0,
     },
+    config = {
+        extra = {
+            xmult = 2
+        }
+    },
     discovered = true,
     rarity = 1,
     cost = 3,
     blueprint_compat = true,
-    perishable_compat = false,
-    -- TODO: write the actual calculate function
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play then
+            if context.scoring_name == "High Card" then
+                return {
+                    xmult = card.ability.extra.xmult
+                }
+            end
+        end
+    end,
+    loc_vars = function (self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.xmult
+            }
+        }
+    end
 }
