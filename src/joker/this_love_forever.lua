@@ -23,8 +23,8 @@ SMODS.Joker {
     loc_txt = {
         name = "This Love, Forever",
         text = {
-            "This Joker gains {C:mult}+#2#{} Mult",
-            "for every Booster pack opened",
+            "This Joker gains {C:mult}+#2#{} Mult for every",
+            "{C:tarot}Arcana{} and {C:spectral}Spectral{} Pack opened",
             "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}",
         }
     },
@@ -36,7 +36,7 @@ SMODS.Joker {
     config = {
         extra = {
             mult = 0,
-            mult_gain = 2,
+            mult_gain = 3,
         }
     },
     discovered = true,
@@ -44,7 +44,22 @@ SMODS.Joker {
     cost = 5,
     blueprint_compat = true,
     perishable_compat = false,
-    -- TODO: write the actual calculate function
+    calculate = function(self, card, context)
+        if context.open_booster and not context.blueprint then
+            if context.booster.group_key == "k_arcana_pack" or context.booster.group_key == "k_spectral_pack" then
+                SMODS.scale_card(card, {
+	                ref_table = card.ability.extra,
+                    ref_value = "mult",
+                    scalar_value = "mult_gain",
+                })
+            end
+        elseif context.joker_main and context.cardarea == G.jokers then
+            return {
+                mult = card.ability.extra.mult,
+                colour = G.C.MULT
+            }
+        end
+    end,
     loc_vars = function (self, info_queue, card)
         return {
             vars = {
