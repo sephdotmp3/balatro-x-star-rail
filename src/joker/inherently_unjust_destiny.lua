@@ -22,9 +22,9 @@ SMODS.Joker {
     key = "inherently_unjust_destiny",
     loc_txt = {
         name = "Inherently Unjust Destiny",
-        text = { -- TODO: add card formatting
+        text = {
             "Retrigger played cards",
-            "with spade suit"
+            "with {V:1}Spade{} suit"
         }
     },
     atlas = "joker_inherently_unjust_destiny",
@@ -36,6 +36,24 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     blueprint_compat = true,
-    perishable_compat = false,
-    -- TODO: write the actual calculate function
+    calculate = function(self, card, context)
+        if context.repetition and context.cardarea == G.play then
+            if context.other_card:is_suit("Spades") then
+                return {
+                    message = localize('k_again_ex'),
+                    repetitions = 1,
+                    card = card
+                }
+            end
+        end
+    end,
+    loc_vars = function (self, info_queue, card)
+        return {
+            vars = {
+                colours = {
+                    G.C.SUITS.Spades
+                }
+            }
+        }
+    end
 }
