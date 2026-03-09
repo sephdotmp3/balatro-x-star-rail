@@ -34,8 +34,8 @@ SMODS.Joker {
     },
     config = {
         extra = {
-            base_odds_numerator = 2,
-            base_odds_denominator = 3,
+            numerator = 2,
+            denominator = 3,
             xmult = 2.5,
             mult = 4,
         }
@@ -44,15 +44,29 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     blueprint_compat = true,
-    -- TODO: write the actual calculate function
-    loc_vars = function (self, info_queue, card)
-        return {
+    calculate = function(self, card, context)
+	    if context.joker_main then
+            if SMODS.pseudorandom_probability(card, "crit_whiffer", card.ability.extra.numerator, card.ability.extra.denominator) then
+		        return {
+			        xmult = card.ability.extra.xmult
+		        }
+            else
+                return {
+                    mult = card.ability.extra.mult
+                }
+            end
+	    end
+    end,
+    loc_vars = function(self, info_queue, card)
+        -- WHY THE HELL WON'T THE PROPER PROBABILITIES DISPLAY. WHY.
+	    local num, denom = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator, "bxsr_in_the_night")
+	    return {
             vars = {
-                card.ability.extra.base_odds_numerator,
-                card.ability.extra.base_odds_denominator,
+                num,
+                denom,
                 card.ability.extra.xmult,
                 card.ability.extra.mult,
             }
         }
-    end
+    end,
 }
