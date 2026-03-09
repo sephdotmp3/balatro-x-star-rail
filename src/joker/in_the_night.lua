@@ -22,9 +22,9 @@ SMODS.Joker {
     key = "in_the_night",
     loc_txt = {
         name = "In The Night",
-        text = { -- TODO: add card formatting
-            "2 in 3 chance for 2.5X Mult,",
-            "+4 Mult otherwise"
+        text = {
+            "{C:green}2 in 3{} chance for {X:mult,C:white}X#3#{} Mult,",
+            "{C:mult}+#4#{} Mult otherwise"
         }
     },
     atlas = "joker_in_the_night",
@@ -32,9 +32,27 @@ SMODS.Joker {
         x = 0,
         y = 0,
     },
+    config = {
+        extra = {
+            base_odds_numerator = 2,
+            base_odds_denominator = 3,
+            xmult = 2.5,
+            mult = 4,
+        }
+    },
     discovered = true,
     rarity = 2,
     cost = 5,
     blueprint_compat = true,
     -- TODO: write the actual calculate function
+    loc_vars = function (self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.base_odds_numerator,
+                card.ability.extra.base_odds_denominator,
+                card.ability.extra.xmult,
+                card.ability.extra.mult,
+            }
+        }
+    end
 }
