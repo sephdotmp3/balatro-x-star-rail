@@ -23,7 +23,7 @@ SMODS.Joker {
     loc_txt = {
         name = "In The Night",
         text = {
-            "{C:green}2 in 3{} chance for {X:mult,C:white}X#3#{} Mult,",
+            "{C:green}#1# in #2#{} chance for {X:mult,C:white}X#3#{} Mult,",
             "{C:mult}+#4#{} Mult otherwise"
         }
     },
@@ -58,7 +58,6 @@ SMODS.Joker {
 	    end
     end,
     loc_vars = function(self, info_queue, card)
-        -- WHY THE HELL WON'T THE PROPER PROBABILITIES DISPLAY. WHY.
 	    local num, denom = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator, "bxsr_in_the_night")
 	    return {
             vars = {
