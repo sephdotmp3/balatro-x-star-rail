@@ -23,6 +23,7 @@ Every card in a **High Card** gives **2x** Mult when scored
 This Joker gains **+3** Mult for every **Arcana** and **Spectral** Pack opened
 
 ## Uncommon Jokers
+### Final Victor
 <img src="assets/2x/joker/final_victor.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 This Joker gains **X0.2** Mult each time a card is scored (max 15 times)
