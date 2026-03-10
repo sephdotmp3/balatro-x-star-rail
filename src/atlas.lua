@@ -19,4 +19,5 @@
 ]]
 
 assert(SMODS.load_file("src/atlas/blind.lua"))()
+assert(SMODS.load_file("src/atlas/enhancement.lua"))()
 assert(SMODS.load_file("src/atlas/joker.lua"))()

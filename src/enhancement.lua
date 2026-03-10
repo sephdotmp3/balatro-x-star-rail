@@ -1,5 +1,5 @@
 --[[
- * main.lua
+ * enhancement.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,9 +18,4 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-assert(SMODS.load_file("src/atlas.lua"))()
-assert(SMODS.load_file("src/blind.lua"))()
-assert(SMODS.load_file("src/enhancement.lua"))()
-assert(SMODS.load_file("src/joker.lua"))()
-assert(SMODS.load_file("src/sounds.lua"))()
-assert(SMODS.load_file("src/utils.lua"))()
+assert(SMODS.load_file("src/enhancement/swarm.lua"))()
