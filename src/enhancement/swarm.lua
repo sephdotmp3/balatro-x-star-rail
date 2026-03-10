@@ -26,8 +26,8 @@ SMODS.Enhancement {
             "Rankless and suitless,",
             "gives {C:chips}+#1#{} chips",
             "and is destroyed after play,",
-            "but spawns another Swarm",
-            "Card when discarded"
+            "but adds another Swarm",
+            "Card to deck when discarded"
         }
     },
     atlas = "enhancement_swarm",
@@ -47,10 +47,21 @@ SMODS.Enhancement {
     no_suit = true,
     always_scores = true,
     weight = 0,
-    calculate = function (self, card, context)
-        
+    calculate = function(self, card, context)
+        if context.main_scoring and context.cardarea == G.play then
+            return {
+                chips = card.ability.extra.chips,
+            }
+        elseif context.destroy_card and context.cardarea == G.play and context.destroy_card == card then
+            return {
+                remove = true
+            }
+        elseif context.discard and context.other_card == card then
+            -- TODO: figure out spawning a swarm card
+            print("i would create another swarm card here")
+        end
     end,
-    loc_vars = function (self, info_queue, card)
+    loc_vars = function(self, info_queue, card)
         return {
             vars = {
                 card.ability.extra.chips
