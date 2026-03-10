@@ -19,6 +19,14 @@
 ]]
 
 SMODS.Sound {
+    -- this SHOULD be "along_the_passing_shore_debuff_scale" or something like that,
+    -- but i'm not making an insanely long key for something one-time.
+    -- also i'm pretty sure something's off with the pitch but i'm not fixing that rn
+    key = "acheron_debuff",
+    path = "acheron_debuff.wav",
+}
+
+SMODS.Sound {
     key = "the_hunt_targeted",
     path = "the_hunt_targeted.wav",
 }

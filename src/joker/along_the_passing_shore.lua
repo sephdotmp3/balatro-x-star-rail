@@ -22,9 +22,11 @@ SMODS.Joker {
     key = "along_the_passing_shore",
     loc_txt = {
         name = "Along The Passing Shore",
-        text = { -- TODO: write the actual description
-            "This is a cool description of",
-            "the ability for this Joker"
+        text = {
+            "This Joker gains {C:mult}+#2#{} Mult per played hand,",
+            "every debuffed card in played hand",
+            "multiplies this tally by #3#x",
+            "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}",
         }
     },
     atlas = "joker_along_the_passing_shore",
@@ -32,10 +34,59 @@ SMODS.Joker {
         x = 0,
         y = 0,
     },
+    config = {
+        extra = {
+            mult = 0,
+            mult_gain = 2,
+            mult_multiplier = 1.5,
+        }
+    },
     discovered = true,
     rarity = 3,
-    cost = 5,
+    cost = 7,
     blueprint_compat = true,
     perishable_compat = false,
-    -- TODO: write the actual calculate function
+    calculate = function(self, card, context)
+        if context.before and not context.blueprint then
+            local debuffed_tally = 0
+            for _, v in pairs(context.full_hand) do
+                if v.debuff then
+                    debuffed_tally = debuffed_tally + 1
+                end
+            end
+            if debuffed_tally > 0 then
+                SMODS.scale_card(card, {
+                    ref_table = card.ability.extra,
+                    ref_value = "mult",
+                    scalar_value = "mult_gain",
+                    operation = function (ref_table, ref_value, initial, change)
+                        ref_table[ref_value] = math.ceil((initial + change)*(card.ability.extra.mult_multiplier^debuffed_tally))
+                    end,
+                    scaling_message = {
+                        message = "Weep for the departed.",
+                        sound = "bxsr_acheron_debuff",
+                    }
+                })
+            else
+                SMODS.scale_card(card, {
+	                ref_table = card.ability.extra,
+                    ref_value = "mult",
+                    scalar_value = "mult_gain",
+                })
+            end
+        elseif context.joker_main and context.cardarea == G.jokers then
+            return {
+                mult = card.ability.extra.mult,
+            }
+        end
+    end,
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.mult,
+                card.ability.extra.mult_gain,
+                card.ability.extra.mult_multiplier
+            }
+        }
+    end
 }
