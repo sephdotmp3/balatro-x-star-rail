@@ -41,7 +41,17 @@ SMODS.Joker {
     discovered = true,
     rarity = 1,
     cost = 4,
-    -- TODO: write the actual calculate function
+    calculate = function(self, card, context)
+        if context.repetition and context.cardarea == G.play then
+            if context.scoring_name == card.ability.extra.targeted_hand then
+                return {
+                    message = localize('k_again_ex'),
+                    repetitions = 1,
+                    card = card
+                }
+            end
+        end
+    end,
     loc_vars = function (self, info_queue, card)
         return {
             vars = {
