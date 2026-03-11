@@ -36,7 +36,7 @@ SMODS.Joker {
     },
     config = {
         extra = {
-            mult = 50,
+            mult = nil,
             mult_gain = 1,
             percent_per_mult = 2,
         }
@@ -44,13 +44,35 @@ SMODS.Joker {
     discovered = true,
     rarity = 3,
     cost = 6,
-    -- TODO: write the actual calculate function
     calculate = function(self, card, context)
+        if context.before and not context.blueprint then
+            local percent_below = 1 - (G.GAME.chips / G.GAME.blind.chips)
+            local actual_percent_per_mult = card.ability.extra.percent_per_mult / 100
+            card.ability.extra.mult = math.floor(percent_below / actual_percent_per_mult)
+        elseif context.joker_main and context.cardarea == G.jokers then
+            return {
+                mult = card.ability.extra.mult,
+                colour = G.C.MULT
+            }
+        elseif context.after and not context.blueprint then
+            card.ability.extra.mult = nil
+        end
     end,
     loc_vars = function(self, info_queue, card)
+        local displayed_mult
+        if card.ability.extra.mult ~= nil then
+            displayed_mult = card.ability.extra.mult
+        elseif G.GAME.chips ~= nil and G.GAME.blind ~= nil and G.GAME.blind.chips ~= nil and G.GAME.blind.chips > 0 then
+            local percent_below = 1 - (G.GAME.chips / G.GAME.blind.chips)
+            local actual_percent_per_mult = card.ability.extra.percent_per_mult / 100
+            displayed_mult = math.floor(percent_below / actual_percent_per_mult)
+            assert(displayed_mult == displayed_mult)
+        else
+            displayed_mult = math.floor(card.ability.extra.mult_gain/card.ability.extra.percent_per_mult*100)
+        end
         return {
             vars = {
-                card.ability.extra.mult,
+                displayed_mult,
                 card.ability.extra.mult_gain,
                 card.ability.extra.percent_per_mult
             }
