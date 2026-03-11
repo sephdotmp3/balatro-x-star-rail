@@ -82,6 +82,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_the_unreachable_side",
+  path = "joker/the_unreachable_side.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_this_love_forever",
   path = "joker/this_love_forever.png",
   px = 71,
