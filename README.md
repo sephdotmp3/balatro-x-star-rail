@@ -44,6 +44,11 @@ Retrigger played cards with **Spade** suit
 TODO: balance this thing
 
 ## Rare Jokers
+### A Secret Vow
+<img src="assets/2x/joker/a_secret_vow.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+This Joker gives **+1** Mult for every **2%** score below the blind's required score
+
 ### Along The Passing Shore
 <img src="assets/2x/joker/along_the_passing_shore.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
