@@ -19,6 +19,13 @@
 ]]
 
 SMODS.Atlas {
+  key = "joker_a_secret_vow",
+  path = "joker/a_secret_vow.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_along_the_passing_shore",
   path = "joker/along_the_passing_shore.png",
   px = 71,

@@ -29,6 +29,7 @@ assert(SMODS.load_file("src/joker/inherently_unjust_destiny.lua"))()
 assert(SMODS.load_file("src/joker/yet_hope_is_priceless.lua"))()
 
 -- Rare Jokers
+assert(SMODS.load_file("src/joker/a_secret_vow.lua"))()
 assert(SMODS.load_file("src/joker/along_the_passing_shore.lua"))()
 assert(SMODS.load_file("src/joker/time_woven_into_gold.lua"))()
 
