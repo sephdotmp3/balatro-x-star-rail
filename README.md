@@ -77,7 +77,7 @@ Played cards are destroyed after scoring
 Start with a random number of hands and discards, reward and required score is randomized
 
 ### The Erudition
-TODO: write this blind
+Must play (most played hand) on odd hands, but cannot play (most played hand) on even hands
 
 ### The Harmony
 All played cards must have the same rank or suit
