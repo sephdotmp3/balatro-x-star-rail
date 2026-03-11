@@ -1,5 +1,5 @@
 --[[
- * if_time_where_a_flower.lua
+ * if_time_were_a_flower.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
