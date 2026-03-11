@@ -46,6 +46,12 @@ SMODS.Joker {
     rarity = 3,
     cost = 7,
     calculate = function(self, card, context)
+        if context.selling_self and not context.blueprint then
+            -- failsafe
+            G.hand:change_size(card.ability.extra.total_loss)
+            return
+        end
+
         local most_played_hand
         if (context.before or context.after) and not context.blueprint then
             most_played_hand = "High Card"
