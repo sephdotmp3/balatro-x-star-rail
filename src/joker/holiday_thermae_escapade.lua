@@ -42,11 +42,34 @@ SMODS.Joker {
         }
     },
     discovered = true,
+    perishable_compat = false,
     rarity = 2,
     cost = 6,
-    -- TODO: write the actual calculate function
     calculate = function(self, card, context)
-        
+        if context.joker_main and context.cardarea == G.jokers and not context.blueprint then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    -- TODO: figure out how to get just the chips field of the scored hand
+                    return true
+                end
+            }))
+            return {
+                chips = card.ability.extra.chip_tally*card.ability.extra.chip_return_percent/100
+            }
+        elseif context.after and not context.blueprint then
+            SMODS.scale_card(card, {
+	            ref_table = card.ability.extra,
+                ref_value = "chip_tally",
+	            scalar_value = "tally_clear_percent",
+                operation = function (ref_table, ref_value, initial, change)
+                    ref_table[ref_value] = initial*change/100
+                end,
+                scaling_message = {
+	                message = localize("k_reset"),
+	                colour = G.C.RED,
+                }
+            })
+        end
     end,
     loc_vars = function(self, info_queue, card)
         return {
