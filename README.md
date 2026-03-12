@@ -71,33 +71,50 @@ This Joker gains **X0.1** Mult for every card played
 Prevents Death once, then **self-destructs**
 
 # New Boss Blinds
-TODO: gifs for each of these
 ### The Abundance
+TODO: gif for this
+
 If played hand doesn't beat blind, add 50% of its score to the blind's required score
 
 ### The Destruction
+<img src="readme-assets/destruction.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
 Played cards are destroyed after scoring
 
 ### The Elation
+<img src="readme-assets/elation.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
 Start with a random number of hands and discards, reward and required score is randomized
 
 ### The Erudition
+<img src="readme-assets/erudition.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
 Must play (most played hand) on odd hands, but cannot play (most played hand) on even hands
 
 ### The Harmony
+TODO: gif for this
+
 All played cards must have the same rank or suit
 
 ### The Nihility
+<img src="readme-assets/nihility.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
 Playing a (most played hand) debuffs a random Joker during the next hand
 
 ### The Preservation
+<img src="readme-assets/preservation.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
 Every $5 below $20 increases blind's required score by 1X base score
 
 ### The Propagation
-TODO: write this blind
+TODO: gif for this and write this blind
 
 ### The Remembrance
+<img src="readme-assets/remembrance.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
 TODO: write this blind
 
 ### The Hunt
+<img src="readme-assets/the_hunt.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
 A (most played hand) is worth 0.4x, but all other hands are worth 1.5x
