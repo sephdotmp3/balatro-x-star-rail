@@ -37,23 +37,23 @@ SMODS.Blind {
     config = {
         extra = {
             regain_percent = 50,
-            previous_score = 0
+            previous_score = 0,
+            total_score_increase = 0,
         }
     },
     boss_colour = HEX("eecd31"),
-    set_blind = function(self)
-        self.config.extra.previous_score = 0
-    end,
     press_play = function(self)
-        self.config.extra.previous_score = G.GAME.chips
+        G.GAME.blind.effect.extra.previous_score = G.GAME.chips
     end,
     bxsr_after_play = function(self)
         G.E_MANAGER:add_event(Event({
     		func = function()
-                local hand_score = G.GAME.chips - self.config.extra.previous_score
+                local hand_score = G.GAME.chips - G.GAME.blind.effect.extra.previous_score
                 if G.GAME.chips < G.GAME.blind.chips and not G.GAME.blind.disabled then
 			        G.GAME.blind:wiggle()
-                    G.GAME.blind.chips = G.GAME.blind.chips + hand_score * self.config.extra.regain_percent / 100
+                    local current_increase = hand_score * G.GAME.blind.effect.extra.regain_percent / 100
+                    G.GAME.blind.effect.extra.total_score_increase = G.GAME.blind.effect.extra.total_score_increase + current_increase
+                    G.GAME.blind.chips = G.GAME.blind.chips + current_increase
 			        G.E_MANAGER:add_event(Event({
 				        trigger = 'ease',
 				        blocking = false,
@@ -69,6 +69,10 @@ SMODS.Blind {
         		return true
  			end
 		}))
+    end,
+    disable = function(self)
+        G.GAME.blind.chips = G.GAME.blind.chips - G.GAME.blind.effect.extra.total_score_increase
+        G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
     end,
     loc_vars = function(self)
         return {
