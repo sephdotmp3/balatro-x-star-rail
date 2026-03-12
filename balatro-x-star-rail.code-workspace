@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../lovely"
+		},
+		{
+			"path": "../smods"
 		}
 	],
 	"settings": {}
