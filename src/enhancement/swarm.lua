@@ -53,8 +53,12 @@ SMODS.Enhancement {
                 remove = true
             }
         elseif context.discard and context.other_card == card then
-            -- TODO: figure out spawning a swarm card
-            print("i would create another swarm card here")
+            local new_card = SMODS.add_card({
+                set = "Base",
+                area = G.deck,
+                enhancement = "m_bxsr_swarm",
+            })
+            new_card:add_to_deck()
         end
     end,
     loc_vars = function(self, info_queue, card)
