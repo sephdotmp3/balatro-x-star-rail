@@ -38,6 +38,7 @@ SMODS.Blind {
         local rank = nil
         local suit_violated = nil
         local rank_violated = nil
+        local should_debuff = false
         for _, card in pairs(cards) do
             if not suit_violated then
                 if not SMODS.has_no_suit(card) and not SMODS.has_any_suit(card) then
@@ -58,10 +59,11 @@ SMODS.Blind {
             end
 
             if suit_violated and rank_violated then
-                return true
+                should_debuff = true
+                break
             end
         end
-        return false
+        return should_debuff and not G.GAME.blind.disabled
     end,
     get_loc_debuff_text = function(self)
         return "All played cards must have the same rank or suit"
