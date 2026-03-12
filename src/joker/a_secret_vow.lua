@@ -30,10 +30,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_a_secret_vow",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     config = {
         extra = {
             mult = nil,

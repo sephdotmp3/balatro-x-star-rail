@@ -29,10 +29,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_if_time_were_a_flower",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     config = {
         extra = {
             targeted_hand = "Three of a Kind"

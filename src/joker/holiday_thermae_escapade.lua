@@ -30,10 +30,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_holiday_thermae_escapade",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     config = {
         extra = {
             chip_tally = 0,

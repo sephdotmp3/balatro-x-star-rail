@@ -36,10 +36,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_eternal_calculus",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     config = {
         extra = {
             xmult = 1,

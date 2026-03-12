@@ -35,10 +35,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_texture_of_memories",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     discovered = true,
     rarity = 4,
     cost = 20,

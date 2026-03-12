@@ -29,10 +29,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_this_love_forever",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     config = {
         extra = {
             mult = 0,

@@ -30,10 +30,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_the_unreachable_side",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     config = {
         extra = {
             xmult = 1,

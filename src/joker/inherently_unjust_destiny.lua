@@ -28,10 +28,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_inherently_unjust_destiny",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     discovered = true,
     rarity = 2,
     cost = 5,

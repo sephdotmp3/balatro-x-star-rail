@@ -30,10 +30,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_along_the_passing_shore",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     config = {
         extra = {
             mult = 0,

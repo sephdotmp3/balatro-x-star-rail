@@ -29,10 +29,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_yet_hope_is_priceless",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     discovered = true,
     rarity = 2,
     cost = 4,

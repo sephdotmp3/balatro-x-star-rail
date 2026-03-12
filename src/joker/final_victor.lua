@@ -30,10 +30,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_final_victor",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     config = {
         extra = {
             xmult = 1,

@@ -31,10 +31,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_time_woven_into_gold",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     config = {
         extra = {
             hand_gain = 1,

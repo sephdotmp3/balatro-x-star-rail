@@ -28,10 +28,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_in_the_night",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     config = {
         extra = {
             numerator = 2,

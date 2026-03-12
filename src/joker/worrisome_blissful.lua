@@ -29,10 +29,6 @@ SMODS.Joker {
         }
     },
     atlas = "joker_worrisome_blissful",
-    pos = {
-        x = 0,
-        y = 0,
-    },
     discovered = true,
     rarity = 3,
     cost = 7,
