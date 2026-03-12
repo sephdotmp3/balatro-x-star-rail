@@ -24,10 +24,11 @@ SMODS.Enhancement {
         name = "Swarm Card",
         text = {
             "Rankless and suitless,",
-            "gives {C:chips}+#1#{} chips",
-            "and is destroyed after play,",
-            "but adds another Swarm",
-            "Card to deck when discarded"
+            "gives {C:chips}+#1#{} chips and is",
+            "destroyed after play,",
+            "but adds another",
+            "Swarm Card to deck",
+            "when discarded"
         }
     },
     atlas = "enhancement_swarm",
@@ -36,7 +37,7 @@ SMODS.Enhancement {
             chips = 10,
         },
     },
-    no_collection = false,
+    no_collection = true,
     discovered = true,
     replace_base_card = true,
     no_rank = true,
