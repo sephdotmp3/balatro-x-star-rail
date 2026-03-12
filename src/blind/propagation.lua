@@ -23,16 +23,42 @@ SMODS.Blind {
     loc_txt = {
         name = "The Propagation",
         text = {
-            -- TODO: change blind text
-            "Cool multiplying blind",
-            "that I need to think of",
+            "Every other card played",
+            "adds a Swarm Card",
+            "to your deck",
         },
     },
     atlas = "blind_propagation",
     discovered = true,
     boss = {
-        min = 3,
+        min = 2,
+    },
+    config = {
+        should_add_card = false,
+        cards_added = {}
     },
     boss_colour = HEX("dd5894"),
-    -- TODO: write the actual blind effects
+    bxsr_after_play = function(self) -- doesn't work exactly how i'd like in terms of timing but whatever
+        if G.GAME.blind.disabled then
+            return
+        end
+        for _, _ in pairs(G.play.cards) do
+            if G.GAME.blind.effect.should_add_card then
+                local new_card = SMODS.add_card({
+                    set = "Base",
+                    area = G.deck,
+                    enhancement = "m_bxsr_swarm",
+                })
+                -- it's also worth noting that new cards added to the deck do not get shuffled in naturally
+                -- and instead get added to the bottom so it's very hard to see the swarm cards
+                -- added by this blind during the blind itself. TOO BAD!
+                new_card:add_to_deck()
+                table.insert(G.GAME.blind.effect.cards_added, new_card)
+            end
+            G.GAME.blind.effect.should_add_card = not G.GAME.blind.effect.should_add_card
+        end
+    end,
+    disable = function(self)
+        SMODS.destroy_cards(G.GAME.blind.effect.cards_added)
+    end
 }
