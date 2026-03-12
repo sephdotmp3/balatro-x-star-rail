@@ -25,6 +25,7 @@ assert(SMODS.load_file("src/joker/this_love_forever.lua"))()
 
 -- Uncommon Jokers
 assert(SMODS.load_file("src/joker/final_victor.lua"))()
+assert(SMODS.load_file("src/joker/holiday_thermae_escapade.lua"))()
 assert(SMODS.load_file("src/joker/in_the_night.lua"))()
 assert(SMODS.load_file("src/joker/inherently_unjust_destiny.lua"))()
 assert(SMODS.load_file("src/joker/the_unreachable_side.lua"))()
