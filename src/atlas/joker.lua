@@ -61,6 +61,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_i_venture_forth_to_hunt",
+  path = "joker/i_venture_forth_to_hunt.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_if_time_were_a_flower",
   path = "joker/if_time_were_a_flower.png",
   px = 71,
