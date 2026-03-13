@@ -110,6 +110,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_today_is_another_peaceful_day",
+  path = "joker/today_is_another_peaceful_day.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_worrisome_blissful",
   path = "joker/worrisome_blissful.png",
   px = 71,
