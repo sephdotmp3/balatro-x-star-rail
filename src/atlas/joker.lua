@@ -82,6 +82,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_reforged_remembrance",
+  path = "joker/reforged_remembrance.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_shadowed_by_night",
   path = "joker/shadowed_by_night.png",
   px = 71,
