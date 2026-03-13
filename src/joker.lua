@@ -19,6 +19,7 @@
 ]]
 
 -- Common Jokers
+assert(SMODS.load_file("src/joker/earthly_escapade.lua"))()
 assert(SMODS.load_file("src/joker/if_time_were_a_flower.lua"))()
 assert(SMODS.load_file("src/joker/shadowed_by_night.lua"))()
 assert(SMODS.load_file("src/joker/this_love_forever.lua"))()
