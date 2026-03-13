@@ -24,28 +24,40 @@ SMODS.Joker {
         name = "Today Is Another Peaceful Day",
         text = {
             "This Joker gains {C:chips}+#2#{} Chips",
-            "for every {C:attention}Four of a Kind{} played",
+            "for every {C:attention}#3#{} played",
             "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips){}",
         }
     },
     atlas = "joker_today_is_another_peaceful_day",
     config = {
         extra = {
-            chips = 1,
-            chip_gain = 15,
+            chips = 0,
+            chip_gain = 20,
+            targeted_hand = "Four of a Kind",
         }
     },
     discovered = true,
     rarity = 2,
     cost = 6,
-    -- TODO: write the actual calculate function
     calculate = function(self, card, context)
+        if context.before and not context.blueprint and context.scoring_name == card.ability.extra.targeted_hand then
+            SMODS.scale_card(card, {
+                ref_table = card.ability.extra,
+                ref_value = "chips",
+                scalar_value = "chip_gain"
+            })
+        elseif context.joker_main and context.cardarea == G.jokers then
+            return {
+                chips = card.ability.extra.chips
+            }
+        end
     end,
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
                 card.ability.extra.chips,
                 card.ability.extra.chip_gain,
+                card.ability.extra.targeted_hand,
             }
         }
     end
