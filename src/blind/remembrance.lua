@@ -23,7 +23,6 @@ SMODS.Blind {
     loc_txt = {
         name = "The Remembrance",
         text = {
-            -- TODO: change blind text
             "Every type of card that isn't",
             "found in your first hand",
             "will be flipped for the",
@@ -41,5 +40,57 @@ SMODS.Blind {
         }
     },
     boss_colour = HEX("cf712f"),
-    -- TODO: write the actual blind effects
+    press_play = function(self)
+        if #G.GAME.blind.effect.extra.first_hand_cards > 0 then
+            return
+        end
+
+        for _, card in pairs(G.play.cards) do
+            local card_suit
+            if SMODS.has_no_suit(card) then
+                card_suit = "none"
+            elseif SMODS.has_any_suit(card) then
+                card_suit = "any"
+            else
+                card_suit = card.base.suit
+            end
+
+            local card_rank
+            if SMODS.has_no_rank(card) then
+                card_rank = "none"
+            else
+                card_rank = card:get_id()
+            end
+
+            table.insert(G.GAME.blind.effect.extra.first_hand_cards, {rank = card_rank, suit = card_suit})
+        end
+    end,
+    stay_flipped = function(self, area, card)
+        if #G.GAME.blind.effect.extra.first_hand_cards == 0 then
+            return false
+        end
+
+        for _, first_hand_card in pairs(G.GAME.blind.effect.extra.first_hand_cards) do
+            local suit_violated
+            if SMODS.has_any_suit(card) or first_hand_card.suit == "any" then
+                suit_violated = false
+            elseif SMODS.has_no_suit(card) and first_hand_card.suit == "none" then
+                suit_violated = false
+            else
+                suit_violated = first_hand_card.suit == card.base.suit
+            end
+
+            local rank_violated
+            if SMODS.has_no_rank(card) and first_hand_card.rank == "none" then
+                rank_violated = false
+            else
+                rank_violated = first_hand_card.rank == card:get_id()
+            end
+
+            if not rank_violated and not suit_violated then
+                return false
+            end
+        end
+        return true
+    end
 }
