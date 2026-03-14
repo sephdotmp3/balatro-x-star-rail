@@ -23,16 +23,16 @@ SMODS.Blind {
     loc_txt = {
         name = "The Remembrance",
         text = {
-            "Every type of card that isn't",
-            "found in your first hand",
-            "will be flipped for the",
-            "rest of the blind"
+            "Every type of card that",
+            "isn't found in your first",
+            "hand will be flipped for",
+            "the rest of the blind"
         },
     },
     atlas = "blind_remembrance",
     discovered = true,
     boss = {
-        min = 2,
+        min = 4,
     },
     config = {
         extra = {
@@ -41,35 +41,51 @@ SMODS.Blind {
     },
     boss_colour = HEX("cf712f"),
     press_play = function(self)
-        if #G.GAME.blind.effect.extra.first_hand_cards > 0 then
-            return
-        end
+        G.E_MANAGER:add_event(Event({
+            blocking = false,
+            func = function()
+                if #G.play.cards == 0 then
+                    return false
+                end
 
-        for _, card in pairs(G.play.cards) do
-            local card_suit
-            if SMODS.has_no_suit(card) then
-                card_suit = "none"
-            elseif SMODS.has_any_suit(card) then
-                card_suit = "any"
-            else
-                card_suit = card.base.suit
+                if #G.GAME.blind.effect.extra.first_hand_cards > 0 then
+                    return true
+                end
+                for _, card in pairs(G.play.cards) do
+                    local card_suit
+                    if SMODS.has_no_suit(card) then
+                        card_suit = "none"
+                    elseif SMODS.has_any_suit(card) then
+                        card_suit = "any"
+                    else
+                        card_suit = card.base.suit
+                    end
+
+                    local card_rank
+                    if SMODS.has_no_rank(card) then
+                        card_rank = "none"
+                    else
+                        card_rank = card:get_id()
+                    end
+
+                    local insert_card = {
+                        rank = card_rank,
+                        suit = card_suit
+                    }
+                    table.insert(G.GAME.blind.effect.extra.first_hand_cards, insert_card)
+                end
+
+                -- TODO: flip cards that are in your hand
+                return true
             end
-
-            local card_rank
-            if SMODS.has_no_rank(card) then
-                card_rank = "none"
-            else
-                card_rank = card:get_id()
-            end
-
-            table.insert(G.GAME.blind.effect.extra.first_hand_cards, {rank = card_rank, suit = card_suit})
-        end
+        }))
     end,
     stay_flipped = function(self, area, card)
-        if #G.GAME.blind.effect.extra.first_hand_cards == 0 then
+        if #G.GAME.blind.effect.extra.first_hand_cards == 0 or area ~= G.hand then
             return false
         end
 
+        print(G.GAME.blind.effect.extra.first_hand_cards)
         for _, first_hand_card in pairs(G.GAME.blind.effect.extra.first_hand_cards) do
             local suit_violated
             if SMODS.has_any_suit(card) or first_hand_card.suit == "any" then
@@ -77,20 +93,23 @@ SMODS.Blind {
             elseif SMODS.has_no_suit(card) and first_hand_card.suit == "none" then
                 suit_violated = false
             else
-                suit_violated = first_hand_card.suit == card.base.suit
+                suit_violated = first_hand_card.suit ~= card.base.suit
             end
 
             local rank_violated
             if SMODS.has_no_rank(card) and first_hand_card.rank == "none" then
                 rank_violated = false
             else
-                rank_violated = first_hand_card.rank == card:get_id()
+                rank_violated = first_hand_card.rank ~= card:get_id()
             end
 
-            if not rank_violated and not suit_violated then
+            if not (rank_violated or suit_violated) or G.GAME.blind.disabled then
                 return false
             end
         end
         return true
+    end,
+    disable = function(self)
+        -- TODO: disable this thing
     end
 }
