@@ -29,7 +29,7 @@ SMODS.Joker {
             "gives {C:white,X:mult}X#1#{} Mult"
         }
     },
-    atlas = "joker_i_venture_forth_to_hunt",
+    atlas = "joker_cruising_in_the_stellar_sea",
     config = {
         extra = {
             xmult = 1.5
