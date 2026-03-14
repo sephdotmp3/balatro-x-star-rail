@@ -47,6 +47,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_echoes_of_the_coffin",
+  path = "joker/echoes_of_the_coffin.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_eternal_calculus",
   path = "joker/eternal_calculus.png",
   px = 71,
