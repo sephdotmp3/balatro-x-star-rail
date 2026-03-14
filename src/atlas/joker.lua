@@ -33,6 +33,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_cruising_in_the_stellar_sea",
+  path = "joker/cruising_in_the_stellar_sea.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_earthly_escapade",
   path = "joker/earthly_escapade.png",
   px = 71,

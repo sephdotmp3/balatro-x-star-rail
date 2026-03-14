@@ -1,5 +1,5 @@
 --[[
- * i_venture_forth_to_hunt.lua
+ * cruising_in_the_stellar_sea.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -19,30 +19,30 @@
 ]]
 
 SMODS.Joker {
-    key = "i_venture_forth_to_hunt",
+    key = "cruising_in_the_stellar_sea",
     loc_txt = {
-        name = "I Venture Forth to Hunt",
+        name = "Cruising in the Stellar Sea",
         text = {
             "Every Enhanced Joker,",
             "Enhanced card played",
             "and Enhanced card in your hand",
-            "gives {C:mult}+#1#{} Mult"
+            "gives {C:white,X:mult}X#1#{} Mult"
         }
     },
     atlas = "joker_i_venture_forth_to_hunt",
     config = {
         extra = {
-            mult_gain = 10
+            xmult = 1.5
         }
     },
     discovered = true,
-    rarity = 3,
-    cost = 7,
+    rarity = 4,
+    cost = 20,
     -- TODO: write the actual calculate function
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.mult_gain
+                card.ability.extra.xmult
             }
         }
     end
