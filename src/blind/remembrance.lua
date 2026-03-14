@@ -24,14 +24,21 @@ SMODS.Blind {
         name = "The Remembrance",
         text = {
             -- TODO: change blind text
-            "Cool memory-related blind",
-            "that I need to think of",
+            "Every type of card that isn't",
+            "found in your first hand",
+            "will be flipped for the",
+            "rest of the blind"
         },
     },
     atlas = "blind_remembrance",
     discovered = true,
     boss = {
-        min = 3,
+        min = 2,
+    },
+    config = {
+        extra = {
+            first_hand_cards = {}
+        }
     },
     boss_colour = HEX("cf712f"),
     -- TODO: write the actual blind effects
