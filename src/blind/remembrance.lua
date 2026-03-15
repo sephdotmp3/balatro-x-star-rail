@@ -75,7 +75,33 @@ SMODS.Blind {
                     table.insert(G.GAME.blind.effect.extra.first_hand_cards, insert_card)
                 end
 
-                -- TODO: flip cards that are in your hand
+                for _, card in pairs(G.hand.cards) do
+                    for _, first_hand_card in pairs(G.GAME.blind.effect.extra.first_hand_cards) do
+                        local suit_violated
+                        if SMODS.has_any_suit(card) or first_hand_card.suit == "any" then
+                            suit_violated = false
+                        elseif SMODS.has_no_suit(card) and first_hand_card.suit == "none" then
+                            suit_violated = false
+                        else
+                            suit_violated = first_hand_card.suit ~= card.base.suit
+                        end
+
+                        local rank_violated
+                        if SMODS.has_no_rank(card) and first_hand_card.rank == "none" then
+                            rank_violated = false
+                        else
+                            rank_violated = first_hand_card.rank ~= card:get_id()
+                        end
+
+                        if not (rank_violated or suit_violated) or G.GAME.blind.disabled then
+                            goto should_not_flip
+                        end
+                    end
+
+                    card:flip()
+
+                    ::should_not_flip::
+                end
                 return true
             end
         }))
@@ -85,7 +111,6 @@ SMODS.Blind {
             return false
         end
 
-        print(G.GAME.blind.effect.extra.first_hand_cards)
         for _, first_hand_card in pairs(G.GAME.blind.effect.extra.first_hand_cards) do
             local suit_violated
             if SMODS.has_any_suit(card) or first_hand_card.suit == "any" then
@@ -110,6 +135,10 @@ SMODS.Blind {
         return true
     end,
     disable = function(self)
-        -- TODO: disable this thing
+        for i = 1, #G.hand.cards do
+            if G.hand.cards[i].facing == 'back' then
+                G.hand.cards[i]:flip()
+            end
+        end
     end
 }
