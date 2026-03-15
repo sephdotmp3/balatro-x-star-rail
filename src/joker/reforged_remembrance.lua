@@ -22,7 +22,7 @@ SMODS.Joker {
     key = "reforged_remembrance",
     loc_txt = {
         name = "Reforged Remembrance",
-        text = { -- TODO: tweak description to use special colours and match any ability changes
+        text = {
             "Every other {C:attention}Blind{},",
             "create a {C:spectral}Spectral{} card",
             "when {C:attention}Blind{} is selected",
@@ -39,7 +39,36 @@ SMODS.Joker {
     discovered = true,
     rarity = 2,
     cost = 6,
-    -- TODO: write the actual calculate function
+    calculate = function(self, card, context)
+        if context.setting_blind then
+            if card.ability.extra.cooldown == 1 then
+                card.ability.extra.cooldown = card.ability.extra.cooldown + 1
+                return {
+                    message = "Next blind!",
+                    colour = G.C.SECONDARY_SET.Spectral
+                }
+            end
+
+            if #G.consumeables.cards + G.GAME.consumeable_buffer >= G.consumeables.config.card_limit then
+                return
+            end
+            G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    SMODS.add_card({
+                        set = "Spectral"
+                    })
+                    card.ability.extra.cooldown = card.ability.extra.cooldown - 1
+                    G.GAME.consumeable_buffer = 0
+                    return true
+                end
+            }))
+            return {
+                message = "+1 Spectral",
+                colour = G.C.SECONDARY_SET.Spectral
+            }
+        end
+    end,
     loc_vars = function(self, info_queue, card)
         return {
             vars= {
