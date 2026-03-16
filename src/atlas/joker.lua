@@ -110,6 +110,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_memorys_curtain_never_falls",
+  path = "joker/memorys_curtain_never_falls.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_night_of_fright",
   path = "joker/night_of_fright.png",
   px = 71,
