@@ -37,9 +37,13 @@ SMODS.Joker {
     rarity = 3,
     cost = 8,
     blueprint_compat = true,
-    -- TODO: write the actual calculate function
     calculate = function(self, card, context)
-        
+        if context.individual and context.cardarea == G.play and context.other_card:get_id() == 7 then
+            return {
+                xmult = card.ability.extra.xmult,
+                card = card
+            }
+        end
     end,
     loc_vars = function(self, info_queue, card)
         return {
