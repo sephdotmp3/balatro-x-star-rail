@@ -44,6 +44,7 @@ assert(SMODS.load_file("src/joker/yet_hope_is_priceless.lua"))()
 assert(SMODS.load_file("src/joker/a_secret_vow.lua"))()
 assert(SMODS.load_file("src/joker/along_the_passing_shore.lua"))()
 assert(SMODS.load_file("src/joker/time_woven_into_gold.lua"))()
+assert(SMODS.load_file("src/joker/to_evernights_stars.lua"))()
 assert(SMODS.load_file("src/joker/worrisome_blissful.lua"))()
 
 -- Legendary Jokers

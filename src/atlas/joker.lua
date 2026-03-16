@@ -173,6 +173,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_to_evernights_stars",
+  path = "joker/to_evernights_stars.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_today_is_another_peaceful_day",
   path = "joker/today_is_another_peaceful_day.png",
   px = 71,
