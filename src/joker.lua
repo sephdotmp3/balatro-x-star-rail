@@ -33,6 +33,7 @@ assert(SMODS.load_file("src/joker/in_the_night.lua"))()
 assert(SMODS.load_file("src/joker/inherently_unjust_destiny.lua"))()
 assert(SMODS.load_file("src/joker/reforged_remembrance.lua"))()
 assert(SMODS.load_file("src/joker/the_unreachable_side.lua"))()
+assert(SMODS.load_file("src/joker/though_worlds_apart.lua"))()
 assert(SMODS.load_file("src/joker/today_is_another_peaceful_day.lua"))()
 assert(SMODS.load_file("src/joker/yet_hope_is_priceless.lua"))()
 

@@ -145,6 +145,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_though_worlds_apart",
+  path = "joker/though_worlds_apart.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_time_woven_into_gold",
   path = "joker/time_woven_into_gold.png",
   px = 71,
