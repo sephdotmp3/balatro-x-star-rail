@@ -23,7 +23,7 @@ SMODS.Joker {
     loc_txt = {
         name = "Day One of My New Life",
         text = {
-            "Played 7s give {C:chips}+#1#{} Chips",
+            "Played {C:attention}7s{} give {C:chips}+#1#{} Chips",
             "and {C:mult}+#2#{} Mult when scored"
         }
     },
