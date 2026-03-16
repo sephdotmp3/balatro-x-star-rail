@@ -31,8 +31,13 @@ SMODS.Joker {
     rarity = 2,
     cost = 6,
     blueprint_compat = true,
-    -- TODO: write the actual calculate function
     calculate = function(self, card, context)
-        
+        if context.repetition and context.cardarea == G.play and context.other_card:get_id() == 7 then
+            return {
+                message = localize('k_again_ex'),
+                repetitions = 2,
+                card = card
+            }
+        end
     end,
 }
