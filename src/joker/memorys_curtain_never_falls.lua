@@ -44,6 +44,7 @@ SMODS.Joker {
     discovered = true,
     rarity = 4,
     cost = 20,
+    eternal_compat = false,
     -- TODO: write the actual calculate function
     calculate = function(self, card, context)
         

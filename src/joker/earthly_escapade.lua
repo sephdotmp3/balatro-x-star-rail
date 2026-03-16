@@ -40,6 +40,7 @@ SMODS.Joker {
     discovered = true,
     rarity = 1,
     cost = 5,
+    blueprint_compat = true,
     -- TODO: write the actual calculate function
     calculate = function(self, card, context)
         

@@ -40,6 +40,7 @@ SMODS.Joker {
     discovered = true,
     rarity = 3,
     cost = 6,
+    blueprint_compat = true,
     calculate = function(self, card, context)
         if context.before and not context.blueprint then
             local percent_below = 1 - (G.GAME.chips / G.GAME.blind.chips)

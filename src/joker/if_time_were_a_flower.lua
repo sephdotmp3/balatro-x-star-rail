@@ -37,6 +37,7 @@ SMODS.Joker {
     discovered = true,
     rarity = 1,
     cost = 4,
+    blueprint_compat = true,
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.play then
             if context.scoring_name == card.ability.extra.targeted_hand then

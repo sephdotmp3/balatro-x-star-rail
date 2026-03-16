@@ -35,7 +35,8 @@ SMODS.Joker {
     },
     discovered = true,
     rarity = 1,
-    cost = 4,
+    cost = 5,
+    blueprint_compat = true,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and next(SMODS.get_enhancements(context.other_card)) then
             return {

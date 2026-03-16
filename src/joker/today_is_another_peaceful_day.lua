@@ -39,6 +39,8 @@ SMODS.Joker {
     discovered = true,
     rarity = 2,
     cost = 6,
+    blueprint_compat = true,
+    perishable_compat = false,
     calculate = function(self, card, context)
         if context.before and not context.blueprint and context.scoring_name == card.ability.extra.targeted_hand then
             SMODS.scale_card(card, {

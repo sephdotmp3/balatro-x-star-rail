@@ -42,7 +42,6 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     blueprint_compat = true,
-    perishable_compat = false,
     calculate = function (self, card, context)
         if context.individual and context.cardarea == G.play and not context.blueprint and
             card.ability.extra.xmult < card.ability.extra.max_triggers*card.ability.extra.xmult_gain then

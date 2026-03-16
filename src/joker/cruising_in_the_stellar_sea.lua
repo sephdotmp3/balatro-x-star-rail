@@ -44,6 +44,7 @@ SMODS.Joker {
     discovered = true,
     rarity = 4,
     cost = 20,
+    blueprint_compat = true,
     -- TODO: write the actual calculate function
     loc_vars = function(self, info_queue, card)
         return {
