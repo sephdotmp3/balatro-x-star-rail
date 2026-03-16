@@ -45,8 +45,31 @@ SMODS.Joker {
     rarity = 4,
     cost = 20,
     eternal_compat = false,
-    -- TODO: write the actual calculate function
     calculate = function(self, card, context)
-        
+        if context.selling_self and not context.blueprint then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    SMODS.add_card({
+                        set = "Joker",
+                        key = "j_bxsr_day_one_of_my_new_life",
+                        no_edition = true,
+                        edition = 'e_negative'
+                    })
+                    SMODS.add_card({
+                        set = "Joker",
+                        key = "j_bxsr_poised_to_bloom",
+                        no_edition = true,
+                        edition = 'e_negative'
+                    })
+                    SMODS.add_card({
+                        set = "Joker",
+                        key = "j_bxsr_to_evernights_stars",
+                        no_edition = true,
+                        edition = 'e_negative'
+                    })
+                    return true
+                end
+            }))
+        end
     end
 }
