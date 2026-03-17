@@ -25,22 +25,48 @@ SMODS.Joker {
         text = {
             "This Joker gives {X:mult,C:white}X#2#{} Mult",
             "for every hand played",
-            "(resets after round end)",
-            "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult){}",
+            "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult,{}",
+            "{C:inactive}resets after round end)",
         }
     },
     atlas = "joker_the_unreachable_side",
     config = {
         extra = {
             xmult = 1,
-            xmult_gain = 0.5
+            xmult_gain = 0.5,
+            xmult_base = 1,
         }
     },
     discovered = true,
     rarity = 2,
-    cost = 4,
+    cost = 7,
     blueprint_compat = true,
-    -- TODO: write the actual calculate function
+    calculate = function(self, card, context)
+        if context.before and not context.blueprint then
+            SMODS.scale_card(card, {
+	            ref_table = card.ability.extra,
+                ref_value = "xmult",
+                scalar_value = "xmult_gain",
+            })
+        elseif context.joker_main and context.cardarea == G.jokers then
+            return {
+                xmult = card.ability.extra.xmult
+            }
+        elseif context.end_of_round and not context.blueprint and context.main_eval then
+            SMODS.scale_card(card, {
+	            ref_table = card.ability.extra,
+                ref_value = "xmult",
+	            scalar_value = "xmult_base",
+                operation = function (ref_table, ref_value, initial, change)
+                    ref_table[ref_value] = change
+                end,
+                scaling_message = {
+	                message = localize("k_reset"),
+	                colour = G.C.RED,
+                }
+            })
+        end
+    end,
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
