@@ -22,15 +22,37 @@ SMODS.Joker {
     key = "worrisome_blissful",
     loc_txt = {
         name = "Worrisome, Blissful",
-        text = { -- TODO: tweak description to use special colours and match any ability changes
-            "Every 2% scored over",
+        text = {
+            "Every {C:attention}#1#%{} scored over",
             "the blind's required score",
-            "gives $1 at the end of round"
+            "gives {C:attention}$#2#{} at the end of round,",
+            "up to a max of {C:attention}$#3#{}"
         }
     },
     atlas = "joker_worrisome_blissful",
+    config = {
+        extra = {
+            percent_per_dollar_inc = 5,
+            dollars_per_percent_inc = 1,
+            dollars_max = 20
+        }
+    },
     discovered = true,
     rarity = 3,
-    cost = 7,
-    -- TODO: write the actual calculate function
+    cost = 8,
+    calc_dollar_bonus = function (self, card)
+        -- TODO: holy shit even with a cap this is really busted, change this to be logarithmic
+        local overscore_percent = (G.GAME.chips/G.GAME.blind.chips) - 1
+        local total_dollars = math.floor((overscore_percent/(card.ability.extra.percent_per_dollar_inc/100))*card.ability.extra.dollars_per_percent_inc)
+        return math.min(card.ability.extra.dollars_max, total_dollars)
+    end,
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.percent_per_dollar_inc,
+                card.ability.extra.dollars_per_percent_inc,
+                card.ability.extra.dollars_max,
+            }
+        }
+    end
 }
