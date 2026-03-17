@@ -23,35 +23,34 @@ SMODS.Joker {
     loc_txt = {
         name = "Worrisome, Blissful",
         text = {
-            "Every {C:attention}#1#%{} scored over",
-            "the blind's required score",
-            "gives {C:attention}$#2#{} at the end of round,",
-            "up to a max of {C:attention}$#3#{}"
+            "Gives {C:attention}${} logarithmically based on",
+            "how much you scored over",
+            "the {C:attention}Blind's{} required score",
+            "{C:inactive}(ex: ~150% total score -> {C:attention}$6{C:inactive},",
+            "{C:inactive}~200% -> {C:attention}$10{C:inactive}, ~300% -> {C:attention}$15{C:inactive})",
+            "{C:inactive}(Max {C:attention}$#1#{C:inactive})"
         }
     },
     atlas = "joker_worrisome_blissful",
     config = {
         extra = {
-            percent_per_dollar_inc = 5,
-            dollars_per_percent_inc = 1,
-            dollars_max = 20
+            max_dollars = 25
         }
     },
     discovered = true,
     rarity = 3,
     cost = 8,
-    calc_dollar_bonus = function (self, card)
-        -- TODO: holy shit even with a cap this is really busted, change this to be logarithmic
-        local overscore_percent = (G.GAME.chips/G.GAME.blind.chips) - 1
-        local total_dollars = math.floor((overscore_percent/(card.ability.extra.percent_per_dollar_inc/100))*card.ability.extra.dollars_per_percent_inc)
-        return math.min(card.ability.extra.dollars_max, total_dollars)
+    calc_dollar_bonus = function(self, card)
+        local score_percent = (G.GAME.chips/G.GAME.blind.chips)
+        print(score_percent)
+        -- this is a funky equation, but it'll do
+        local total_dollars = 21*math.log((2.1*score_percent)+1-2.1,10)
+        return math.min(math.floor(total_dollars), card.ability.extra.max_dollars)
     end,
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.percent_per_dollar_inc,
-                card.ability.extra.dollars_per_percent_inc,
-                card.ability.extra.dollars_max,
+                card.ability.extra.max_dollars
             }
         }
     end
