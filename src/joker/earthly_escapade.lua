@@ -41,9 +41,27 @@ SMODS.Joker {
     rarity = 1,
     cost = 5,
     blueprint_compat = true,
-    -- TODO: write the actual calculate function
     calculate = function(self, card, context)
-        
+        if context.joker_main and context.cardarea == G.jokers then
+            local odds = pseudorandom("earthly_escapade")
+            if odds <= 0.25 then
+                return {
+                    chips = card.ability.extra.chips
+                }
+            elseif odds <= 0.5 then
+                return {
+                    mult = card.ability.extra.mult
+                }
+            elseif odds <= 0.75 then
+                return {
+                    dollars = card.ability.extra.dollars
+                }
+            else
+                return {
+                    xmult = card.ability.extra.xmult
+                }
+            end
+        end
     end,
     loc_vars = function(self, info_queue, card)
         return {
