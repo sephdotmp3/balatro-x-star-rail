@@ -23,11 +23,11 @@ SMODS.Joker {
     loc_txt = {
         name = "Time Woven Into Gold",
         text = {
-            "Playing your most",
-            "played {C:attention}poker hand{}",
-            "grants {C:blue}+#1#{} hand,",
+            "Playing your most played",
+            "{C:attention}poker hand{} grants {C:blue}+#1#{} hand,",
             "but {C:attention}-#2#{} hand size",
-            "(resets after round end)"
+            "{C:inactive}(resets after round end, hand",
+            "{C:inactive}size will not go below #3#)"
         }
     },
     atlas = "joker_time_woven_into_gold",
@@ -36,6 +36,7 @@ SMODS.Joker {
             hand_gain = 1,
             size_loss = 1,
             total_loss = 0,
+            min_size = 5,
         }
     },
     discovered = true,
@@ -67,8 +68,10 @@ SMODS.Joker {
         elseif context.after and not context.blueprint and context.scoring_name == most_played_hand then
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    G.hand:change_size(-card.ability.extra.size_loss)
-                    card.ability.extra.total_loss = card.ability.extra.total_loss + card.ability.extra.size_loss
+                    if G.hand.config.card_limit > card.ability.extra.min_size then
+                        G.hand:change_size(-card.ability.extra.size_loss)
+                        card.ability.extra.total_loss = card.ability.extra.total_loss + card.ability.extra.size_loss
+                    end
                     return true
                 end
             }))
@@ -85,6 +88,7 @@ SMODS.Joker {
             vars = {
                 card.ability.extra.hand_gain,
                 card.ability.extra.size_loss,
+                card.ability.extra.min_size,
             }
         }
     end
