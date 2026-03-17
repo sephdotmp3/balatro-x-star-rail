@@ -12,6 +12,16 @@ Place the [latest release](https://github.com/sephdotmp3/balatro-x-star-rail/rel
 
 # New Jokers
 ## Common Jokers
+### Day One of My New Life
+<img src="assets/2x/joker/day_one_of_my_new_life.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Played **7s** give **+7** Chips and **+7** Mult when scored
+
+### Earthly Escapade
+<img src="assets/2x/joker/earthly_escapade.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Randomly gives **+30** Chips, **+4** Mult, **$3**, or **X2** Mult when scored
+
 ### Shadowed By Night
 <img src="assets/2x/joker/shadowed_by_night.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
