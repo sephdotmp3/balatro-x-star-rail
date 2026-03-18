@@ -34,21 +34,35 @@ SMODS.Joker {
     atlas = "joker_echoes_of_the_coffin",
     config = {
         extra = {
-            dollars = 1,
-            cards = 5,
-            currently_remaining_cards = 0
+            numerator_dollars = 1,
+            denominator_cards = 5,
+            currently_remaining_cards = 0,
+            total_dollars = 0
         }
     },
     discovered = true,
     rarity = 1,
     cost = 6,
-    -- TODO: write the actual calculate function
+    calculate = function (self, card, context)
+        if context.end_of_round and context.main_eval then
+            card.ability.extra.total_dollars = math.floor(#G.deck.cards*card.ability.extra.numerator_dollars/card.ability.extra.denominator_cards)
+        end
+    end,
+    calc_dollar_bonus = function (self, card)
+        return card.ability.extra.total_dollars
+    end,
     loc_vars = function(self, info_queue, card)
+        local number_of_cards
+        if G.deck == nil then
+            number_of_cards = 52
+        else
+            number_of_cards = #G.deck.cards
+        end
         return {
             vars = {
-                card.ability.extra.dollars,
-                card.ability.extra.cards,
-                69
+                card.ability.extra.numerator_dollars,
+                card.ability.extra.denominator_cards,
+                math.floor(number_of_cards*card.ability.extra.numerator_dollars/card.ability.extra.denominator_cards)
             }
         }
     end
