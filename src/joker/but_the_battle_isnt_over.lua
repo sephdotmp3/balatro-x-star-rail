@@ -18,17 +18,41 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
+-- i apologize in advance, this exact joker effect is already implemented in another mod.
+-- https://github.com/Balatro-Paperback/paperback/blob/9c67a31a418873630f99257de082f8a3e96286a3/content/joker/the_normal_joker.lua
+-- i try not to have effects that other mods implement, but this is an instance of parallel thinking.
+-- i thought it would be fun to have a joker that had a similar philosophy of bronya's "another turn!" archetype, but oh well
+
 SMODS.Joker {
     key = "but_the_battle_isnt_over",
     loc_txt = {
         name = "But the Battle Isn't Over",
         text = {
-            "Retrigger all {C:blue}Common{} {C:attention}Jokers{}"
+            "Retrigger all {C:blue}#1#{} {C:attention}Jokers{}"
         }
     },
     atlas = "joker_but_the_battle_isnt_over",
+    config = {
+        extra = {
+            targeted_rarity = "Common"
+        }
+    },
     discovered = true,
     rarity = 3,
     cost = 9,
-    -- TODO: write the actual calculate function
+    blueprint_compat = true,
+    calculate = function(self, card, context)
+        if context.retrigger_joker_check and context.other_card:is_rarity(card.ability.extra.targeted_rarity) then
+            return {
+                repetitions = 1,
+            }
+        end
+    end,
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.targeted_rarity
+            }
+        }
+    end
 }

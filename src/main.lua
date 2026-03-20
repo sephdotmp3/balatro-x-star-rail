@@ -24,3 +24,9 @@ assert(SMODS.load_file("src/enhancement.lua"))()
 assert(SMODS.load_file("src/joker.lua"))()
 assert(SMODS.load_file("src/sounds.lua"))()
 assert(SMODS.load_file("src/utils.lua"))()
+
+SMODS.current_mod.optional_features = function()
+    return {
+        retrigger_joker = true
+    }
+end
