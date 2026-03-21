@@ -180,6 +180,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_thus_burns_the_dawn",
+  path = "joker/thus_burns_the_dawn.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_time_woven_into_gold",
   path = "joker/time_woven_into_gold.png",
   px = 71,
