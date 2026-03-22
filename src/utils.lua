@@ -30,6 +30,7 @@ end
 
 -- taken from https://github.com/SpectralPack/Cryptid/blob/53ca0bd5acfb6a324564aafa533588691f580d0f/lib/overrides.lua#L152
 local gfep = G.FUNCS.evaluate_play
+---@diagnostic disable-next-line: duplicate-set-field
 function G.FUNCS.evaluate_play(e)
 	gfep(e)
 	G.GAME.blind:bxsr_after_play()
