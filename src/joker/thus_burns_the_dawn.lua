@@ -25,24 +25,51 @@ SMODS.Joker {
         text = {
             "After selling {C:attention}#2#{} {C:attention}Jokers{},",
             "sell this card to gain {C:dark_edition}+1{} {C:attention}Joker{} Slot",
-            "{C:inactive}({C:attention}#1#{C:inactive}/#2# cards sold)"
+            "{C:inactive}({C:attention}#1#{C:inactive}/#2# Jokers sold)"
         }
     },
     atlas = "joker_thus_burns_the_dawn",
     config = {
         extra = {
-            sold_cards = 0,
+            sold_jokers = 0,
             required_sells = 12,
         }
     },
     discovered = true,
     rarity = 3,
     cost = 8,
-    -- TODO: write the actual calculate function
+    eternal_compat = false,
+    calculate = function(self, card, context)
+        if context.selling_card and context.card ~= card and context.card.area == G.jokers and not context.blueprint and card.ability.extra.sold_jokers < card.ability.extra.required_sells then
+            card.ability.extra.sold_jokers = card.ability.extra.sold_jokers + 1
+            local eval = function()
+                return card.ability.extra.sold_jokers >= card.ability.extra.required_sells
+            end
+            juice_card_until(card, eval, true)
+            return {
+                message = tostring(card.ability.extra.sold_jokers).."/"..tostring(card.ability.extra.required_sells),
+                colour = G.C.DARK_EDITION
+            }
+        elseif context.selling_self and not context.blueprint and card.ability.extra.sold_jokers >= card.ability.extra.required_sells then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    if G.jokers then
+                        G.jokers.config.card_limit = G.jokers.config.card_limit + 1
+                    end
+                    return true
+
+                end
+            }))
+            return {
+                message = "+1 Joker Slot",
+                colour = G.C.DARK_EDITION
+            }
+        end
+    end,
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.sold_cards,
+                card.ability.extra.sold_jokers,
                 card.ability.extra.required_sells
             }
         }
