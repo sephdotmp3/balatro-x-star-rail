@@ -22,6 +22,26 @@ Played **7s** give **+7** Chips and **+7** Mult when scored
 
 Randomly gives **+30** Chips, **+4** Mult, **$3**, or **X2** Mult when scored
 
+### Echoes of the Coffin
+<img src="assets/2x/joker/echoes_of_the_coffin.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+At the end of the round, gives **$1** for every **5** cards remaining in the **deck**
+
+### I Venture Forth To Hunt
+<img src="assets/2x/joker/i_venture_forth_to_hunt.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Enhanced cards give **+25** Chips when scored
+
+### If Time Were A Flower
+<img src="assets/2x/joker/if_time_were_a_flower.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Retrigger each card when playing a **Three of a Kind**
+
+### Night of Fright
+<img src="assets/2x/joker/night_of_fright.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Disables the current **Boss Blind** when there is 1 Hand remaining
+
 ### Shadowed By Night
 <img src="assets/2x/joker/shadowed_by_night.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
@@ -38,6 +58,11 @@ This Joker gains **+3** Mult for every **Arcana** and **Spectral** Pack opened
 
 This Joker gains **X0.2** Mult each time a card is scored (max 15 times)
 
+### Holiday Thermae Escapade
+<img src="assets/2x/joker/holiday_thermae_escapade.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+TODO: add proper description
+
 ### In The Night
 <img src="assets/2x/joker/in_the_night.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
@@ -47,6 +72,31 @@ This Joker gains **X0.2** Mult each time a card is scored (max 15 times)
 <img src="assets/2x/joker/inherently_unjust_destiny.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 Retrigger played cards with **Spade** suit
+
+### Poised to Bloom
+<img src="assets/2x/joker/poised_to_bloom.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Retrigger all played **7s** twice
+
+### Reforged Remembrance
+<img src="assets/2x/joker/reforged_remembrance.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Every other **Blind**, create a **Spectral** card when **Blind** is selected (Must have room)
+
+### The Unreachable Side
+<img src="assets/2x/joker/the_unreachable_side.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+This Joker gives **X0.5** Mult for every hand played (Resets after round end)
+
+### Though Worlds Apart
+<img src="assets/2x/joker/though_worlds_apart.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+**Stone Cards** give **1.5X** Mult
+
+### Today Is Another Peaceful Day
+<img src="assets/2x/joker/today_is_another_peaceful_day.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+This Joker gains **+20** Chips for every **Four of a Kind** played
 
 ### Yet Hope Is Priceless
 <img src="assets/2x/joker/yet_hope_is_priceless.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
@@ -64,12 +114,42 @@ This Joker gives **+1** Mult for every **2%** score below the blind's required s
 
 This Joker gains **+2** Mult per played hand, every debuffed card in played hand multiplies this tally by **1.5x**
 
+### But the Battle Isn't Over
+<img src="assets/2x/joker/but_the_battle_isnt_over.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Retrigger all **Common** Jokers
+
 ### Time Woven Into Gold
 <img src="assets/2x/joker/time_woven_into_gold.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-Playing your most played **poker hand** grants **+1** hand, but **-1** hand size (resets after round end)
+Playing your most played **poker hand** grants **+1** hand, but **-1** hand size (resets after round end, hand size will not go below 5)
+
+### Thus Burns the Dawn
+<img src="assets/2x/joker/thus_burns_the_dawn.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+After selling **12** Jokers, sell this card to gain **+1 Joker Slot**
+
+### To Evernight's Stars
+<img src="assets/2x/joker/to_evernights_stars.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Played **7s** give **1.7X** Mult when scored
+
+### Worrisome, Blissful
+<img src="assets/2x/joker/worrisome_blissful.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Gives $ logarithmically based on how much you scored over the **Blind's** required score (ex: ~150% total score -> **$6**, ~200% -> **$10**, ~300% -> **$15**) (Max **$25**)
 
 ## Legendary Jokers
+### Cruising in the Stellar Sea
+<img src="assets/2x/joker/cruising_in_the_stellar_sea.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Every Enhanced Joker, Enhanced card played, and Enhanced card in your hand gives **X1.5** Mult
+
+### Memory's Curtain Never Falls
+<img src="assets/2x/joker/memorys_curtain_never_falls.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+Sell this card to create **Negative** copies of **Day One of My New Life**, **Poised to Bloom**, and **To Evernight's Stars**
+
 ### Eternal Calculus
 <img src="assets/2x/joker/eternal_calculus.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
@@ -117,12 +197,14 @@ Playing a (most played hand) debuffs a random Joker during the next hand
 Every $5 below $20 increases blind's required score by 1X base score
 
 ### The Propagation
-TODO: gif for this and write this blind
+TODO: gif for this
+
+Every other card played adds a Swarm Card to your deck
 
 ### The Remembrance
 <img src="readme-assets/remembrance.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-TODO: write this blind
+Every type of card that isn't found in your first hand will be flipped for the rest of the blind
 
 ### The Hunt
 <img src="readme-assets/the_hunt.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
