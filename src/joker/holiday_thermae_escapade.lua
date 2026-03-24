@@ -23,9 +23,9 @@ SMODS.Joker {
     loc_txt = {
         name = "Holiday Thermae Escapade",
         text = {
-            "When scored, this Joker adds the",
-            "chips scored up to this point to a tally,",
-            "gives {C:attention}#2#%{} of it then clears {C:attention}#3#%{}",
+            "This Joker gains {C:attention}#2#%{} of each",
+            "played {C:attention}poker hand's{} base Chips,",
+            "but clears {C:attention}#3#%{} after scoring",
             "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips){}",
         }
     },
@@ -33,32 +33,40 @@ SMODS.Joker {
     config = {
         extra = {
             chip_tally = 0,
-            chip_return_percent = 20,
+            chip_return_percent = 75,
             tally_clear_percent = 50
         }
     },
     discovered = true,
+    blueprint_compat = true,
     perishable_compat = false,
     rarity = 2,
     cost = 6,
     calculate = function(self, card, context)
-        if context.joker_main and context.cardarea == G.jokers and not context.blueprint then
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    -- TODO: figure out how to get just the chips field of the scored hand
-                    return true
-                end
-            }))
+        if context.before and not context.blueprint then
+            SMODS.scale_card(card, {
+                ref_table = card.ability.extra,
+                ref_value = "chip_tally",
+                scalar_table = G.GAME.hands[context.scoring_name],
+                scalar_value = "chips",
+                operation = function(ref_table, ref_value, initial, change)
+                    ref_table[ref_value] = initial + math.floor(change*card.ability.extra.chip_return_percent/100)
+                end,
+                scaling_message = {
+                    message = "+"..tostring(math.floor(G.GAME.hands[context.scoring_name].chips*card.ability.extra.chip_return_percent/100))
+                }
+            })
+        elseif context.joker_main and context.cardarea == G.jokers then
             return {
-                chips = card.ability.extra.chip_tally*card.ability.extra.chip_return_percent/100
+                chips = card.ability.extra.chip_tally
             }
-        elseif context.after and not context.blueprint then
+       elseif context.after and not context.blueprint then
             SMODS.scale_card(card, {
 	            ref_table = card.ability.extra,
                 ref_value = "chip_tally",
 	            scalar_value = "tally_clear_percent",
                 operation = function (ref_table, ref_value, initial, change)
-                    ref_table[ref_value] = initial*change/100
+                    ref_table[ref_value] = initial - math.floor(initial*change/100)
                 end,
                 scaling_message = {
 	                message = localize("k_reset"),
