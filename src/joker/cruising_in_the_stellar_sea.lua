@@ -48,6 +48,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         -- TODO: figure out why jokers aren't accounted for
         if context.individual and (context.cardarea == G.play or context.cardarea == G.hand or context.cardarea == G.jokers) then
+            ---@diagnostic disable-next-line: param-type-mismatch
             if not context.end_of_round and next(SMODS.get_enhancements(context.other_card)) then
                 return {
                     xmult = card.ability.extra.xmult,
