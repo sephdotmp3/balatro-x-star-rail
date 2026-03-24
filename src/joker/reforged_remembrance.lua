@@ -37,11 +37,12 @@ SMODS.Joker {
         }
     },
     discovered = true,
+    blueprint_compat = true,
     rarity = 2,
     cost = 6,
     calculate = function(self, card, context)
         if context.setting_blind then
-            if card.ability.extra.cooldown == 1 then
+            if card.ability.extra.cooldown == 1 and not context.blueprint then
                 card.ability.extra.cooldown = card.ability.extra.cooldown + 1
                 return {
                     message = "Next blind!",
