@@ -38,6 +38,7 @@ SMODS.Joker {
     cost = 5,
     blueprint_compat = true,
     calculate = function(self, card, context)
+        ---@diagnostic disable-next-line: param-type-mismatch
         if context.individual and context.cardarea == G.play and next(SMODS.get_enhancements(context.other_card)) then
             return {
                 chips = card.ability.extra.chips
