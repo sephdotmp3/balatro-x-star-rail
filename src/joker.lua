@@ -51,6 +51,7 @@ assert(SMODS.load_file("src/joker/worrisome_blissful.lua"))()
 
 -- Legendary Jokers
 assert(SMODS.load_file("src/joker/cruising_in_the_stellar_sea.lua"))()
+assert(SMODS.load_file("src/joker/elation_brimming_with_blessings.lua"))()
 assert(SMODS.load_file("src/joker/eternal_calculus.lua"))()
 assert(SMODS.load_file("src/joker/memorys_curtain_never_falls.lua"))()
 assert(SMODS.load_file("src/joker/texture_of_memories.lua"))()
