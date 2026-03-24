@@ -42,9 +42,63 @@ SMODS.Joker {
         }
     },
     discovered = true,
+    blueprint_compat = false,
     rarity = 4,
     cost = 20,
-    -- TODO: write the actual calculate function
+    calculate = function(self, card, context)
+        if context.end_of_round and G.GAME.blind.boss and not context.blueprint and context.main_eval and not context.repetition then
+            local selection = pseudorandom("aha_the_elation")
+            if selection <= 0.1667 then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        if G.jokers then
+                            G.jokers.config.card_limit = G.jokers.config.card_limit + 1
+                        end
+                        return true
+                    end
+                }))
+                return {
+                    message = "+1 Joker Slot",
+                    colour = G.C.DARK_EDITION
+                }
+            elseif selection <= 0.3333 then
+                return {
+                    dollars = card.ability.extra.dollars
+                }
+            elseif selection <= 0.5 then
+                for _ = 1, card.ability.extra.rare_joker_count do
+                    SMODS.add_card({
+                        set = "Joker",
+                        rarity = "Rare",
+                        no_edition = true,
+                        edition = 'e_negative'
+                    })
+                end
+                return {
+                    message = "+"..tostring(card.ability.extra.rare_joker_count).." Jokers",
+                    colour = G.C.RARITY[3]
+                }
+            elseif selection <= 0.6667 then
+                SMODS.upgrade_poker_hands({
+                    level_up = card.ability.extra.poker_hand_levels,
+                    from = card
+                })
+                return
+            elseif selection <= 0.8333 then
+                ease_hands_played(card.ability.extra.hands)
+                return {
+                    message = "+"..tostring(card.ability.extra.hands).." Hands",
+                    colour = G.C.BLUE
+                }
+            else
+                ease_discard(card.ability.extra.discards)
+                return {
+                    message = "+"..tostring(card.ability.extra.discards).." Discards",
+                    colour = G.C.RED
+                }
+            end
+        end
+    end,
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
