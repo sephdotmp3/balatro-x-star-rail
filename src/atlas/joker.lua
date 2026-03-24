@@ -68,6 +68,13 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+  key = "joker_elation_brimming_with_blessings",
+  path = "joker/elation_brimming_with_blessings.png",
+  px = 71,
+  py = 95,
+}
+
+SMODS.Atlas {
   key = "joker_eternal_calculus",
   path = "joker/eternal_calculus.png",
   px = 71,
