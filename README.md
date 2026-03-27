@@ -61,7 +61,7 @@ This Joker gains **X0.2** Mult each time a card is scored (max 15 times)
 ### Holiday Thermae Escapade
 <img src="assets/2x/joker/holiday_thermae_escapade.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-TODO: add proper description
+This Joker gains **75%** of each played **poker hand's** base Chips, but clears **50%** after scoring
 
 ### In The Night
 <img src="assets/2x/joker/in_the_night.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
