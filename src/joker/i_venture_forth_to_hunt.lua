@@ -23,7 +23,7 @@ SMODS.Joker {
     atlas = "joker_i_venture_forth_to_hunt",
     config = {
         extra = {
-            chips = 25
+            chips = 30
         }
     },
     discovered = true,
