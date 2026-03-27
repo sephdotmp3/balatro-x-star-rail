@@ -23,7 +23,7 @@ SMODS.Blind {
     atlas = "blind_nihility",
     discovered = true,
     boss = {
-        min = 3,
+        min = 4,
     },
     boss_colour = HEX("2abece"),
     -- TODO: add functionality

@@ -23,7 +23,7 @@ SMODS.Blind {
     atlas = "blind_abundance",
     discovered = true,
     boss = {
-        min = 3,
+        min = 2,
     },
     config = {
         extra = {
