@@ -20,15 +20,6 @@
 
 SMODS.Joker {
     key = "final_victor",
-    loc_txt = {
-        name = "Final Victor",
-        text = {
-            "This Joker gains {X:mult,C:white}X#2#{} Mult each time",
-            "a card is scored (max #3# times),",
-            "resets after scoring",
-            "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)",
-        }
-    },
     atlas = "joker_final_victor",
     config = {
         extra = {

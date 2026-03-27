@@ -20,15 +20,6 @@
 
 SMODS.Joker {
     key = "a_secret_vow",
-    loc_txt = {
-        name = "A Secret Vow",
-        text = {
-            "This Joker gives {C:mult}+#2#{} Mult",
-            "for every {C:attention}#3#%{} score below",
-            "the blind's required score",
-            "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}",
-        }
-    },
     atlas = "joker_a_secret_vow",
     config = {
         extra = {

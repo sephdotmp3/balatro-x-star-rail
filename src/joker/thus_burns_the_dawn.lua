@@ -20,14 +20,6 @@
 
 SMODS.Joker {
     key = "thus_burns_the_dawn",
-    loc_txt = {
-        name = "Thus Burns the Dawn",
-        text = {
-            "After selling {C:attention}#2#{} {C:attention}Jokers{},",
-            "sell this card to gain {C:dark_edition}+1{} {C:attention}Joker{} Slot",
-            "{C:inactive}({C:attention}#1#{C:inactive}/#2# Jokers sold)"
-        }
-    },
     atlas = "joker_thus_burns_the_dawn",
     config = {
         extra = {

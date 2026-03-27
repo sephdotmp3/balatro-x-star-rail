@@ -20,15 +20,6 @@
 
 SMODS.Joker {
     key = "the_unreachable_side",
-    loc_txt = {
-        name = "The Unreachable Side",
-        text = {
-            "This Joker gives {X:mult,C:white}X#2#{} Mult",
-            "for every hand played",
-            "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult,{}",
-            "{C:inactive}resets after round end)",
-        }
-    },
     atlas = "joker_the_unreachable_side",
     config = {
         extra = {

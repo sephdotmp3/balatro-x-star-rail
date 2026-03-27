@@ -20,14 +20,6 @@
 
 SMODS.Joker {
     key = "night_of_fright",
-    loc_txt = {
-        name = "Night of Fright",
-        text = {
-            "Disables the current",
-            "{C:attention}Boss Blind{} when",
-            "there is 1 Hand remaining"
-        }
-    },
     atlas = "joker_night_of_fright",
     discovered = true,
     rarity = 1,

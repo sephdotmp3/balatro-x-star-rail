@@ -20,12 +20,6 @@
 
 SMODS.Joker {
     key = "though_worlds_apart",
-    loc_txt = {
-        name = "Though Worlds Apart",
-        text = {
-            "{C:attention}Stone Cards{} give {C:white,X:mult}X#1#{} Mult"
-        }
-    },
     atlas = "joker_though_worlds_apart",
     config = {
         extra = {

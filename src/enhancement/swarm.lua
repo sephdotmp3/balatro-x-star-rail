@@ -20,17 +20,6 @@
 
 SMODS.Enhancement {
     key = "swarm",
-    loc_txt = {
-        name = "Swarm Card",
-        text = {
-            "Rankless and suitless,",
-            "gives {C:chips}+#1#{} chips and is",
-            "destroyed after play,",
-            "but adds another",
-            "Swarm Card to deck",
-            "when discarded"
-        }
-    },
     atlas = "enhancement_swarm",
     config = {
         extra = {

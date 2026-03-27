@@ -20,14 +20,6 @@
 
 SMODS.Joker {
     key = "today_is_another_peaceful_day",
-    loc_txt = {
-        name = "Today Is Another Peaceful Day",
-        text = {
-            "This Joker gains {C:chips}+#2#{} Chips",
-            "for every {C:attention}#3#{} played",
-            "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips){}",
-        }
-    },
     atlas = "joker_today_is_another_peaceful_day",
     config = {
         extra = {

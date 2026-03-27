@@ -20,22 +20,6 @@
 
 SMODS.Joker {
     key = "elation_brimming_with_blessings",
-    loc_txt = {
-        name = "Elation Brimming With Blessings",
-        text = {
-            "When {C:attention}Boss Blind{} is defeated,",
-            "randomly gain one of the following:",
-            "{C:dark_edition}+1{} {C:attention}Joker{} Slot, {C:blue}+#4#{} Hands, {C:red}+#5#{} Discards,",
-            "2 random {C:dark_edition}Negative{} {C:rare}Rare{} {C:attention}Jokers{},",
-            "{C:attention}$50{}, {C:attention}+#3#{} levels to all {C:attention}poker hands{}",
-            "{s:0.8,C:inactive}Beneath the fingertips of geniuses, data flows steadily, endlessly.",
-            "{s:0.8,C:inactive}Masks lurk in the cracks between \"occurrences,\" observing every possibility waiting to unfold.",
-            "{s:0.8,C:inactive}Analysis, extrapolation, answers, questions. Isn't this a perfect stage for geniuses?",
-            "{s:0.8,C:inactive}Cheers, tears, roars, wails... the emotions of life bloom in full.",
-            "{s:0.8,C:inactive}The silent play grows raucous, and blessings fill elation past the brim. Is this the most captivating act?",
-            "{s:0.8,C:inactive}The answer remains the same: utterly unpredictable!"
-        }
-    },
     atlas = "joker_elation_brimming_with_blessings",
     config = {
         extra = {

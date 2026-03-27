@@ -20,14 +20,6 @@
 
 SMODS.Blind {
     key = "preservation",
-    loc_txt = {
-        name = "The Preservation",
-        text = {
-            "Every $#2# below $#1#",
-            "increases blind's required",
-            "score by #3#"
-        },
-    },
     atlas = "blind_preservation",
     discovered = true,
     boss = {

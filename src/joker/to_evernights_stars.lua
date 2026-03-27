@@ -20,13 +20,6 @@
 
 SMODS.Joker {
     key = "to_evernights_stars",
-    loc_txt = {
-        name = "To Evernight's Stars",
-        text = {
-            "Played {C:attention}7s{} give",
-            "{C:white,X:mult}X#1#{} Mult when scored"
-        }
-    },
     atlas = "joker_to_evernights_stars",
     config = {
         extra = {

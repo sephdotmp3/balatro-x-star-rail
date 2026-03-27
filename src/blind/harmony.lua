@@ -20,13 +20,6 @@
 
 SMODS.Blind {
     key = "harmony",
-    loc_txt = {
-        name = "The Harmony",
-        text = {
-            "All played cards must have",
-            "the same rank or suit",
-        },
-    },
     atlas = "blind_harmony",
     discovered = true,
     boss = {

@@ -20,15 +20,6 @@
 
 SMODS.Joker {
     key = "along_the_passing_shore",
-    loc_txt = {
-        name = "Along The Passing Shore",
-        text = {
-            "This Joker gains {C:mult}+#2#{} Mult per played hand,",
-            "every debuffed card in played hand",
-            "multiplies this tally by #3#x",
-            "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}",
-        }
-    },
     atlas = "joker_along_the_passing_shore",
     config = {
         extra = {

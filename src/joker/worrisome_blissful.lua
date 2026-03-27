@@ -20,17 +20,6 @@
 
 SMODS.Joker {
     key = "worrisome_blissful",
-    loc_txt = {
-        name = "Worrisome, Blissful",
-        text = {
-            "Gives {C:attention}${} logarithmically based on",
-            "how much you scored over",
-            "the {C:attention}Blind's{} required score",
-            "{C:inactive}(ex: ~150% total score -> {C:attention}$6{C:inactive},",
-            "{C:inactive}~200% -> {C:attention}$10{C:inactive}, ~300% -> {C:attention}$15{C:inactive})",
-            "{C:inactive}(Max {C:attention}$#1#{C:inactive})"
-        }
-    },
     atlas = "joker_worrisome_blissful",
     config = {
         extra = {

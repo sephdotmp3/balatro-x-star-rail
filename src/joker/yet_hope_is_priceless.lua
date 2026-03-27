@@ -20,14 +20,6 @@
 
 SMODS.Joker {
     key = "yet_hope_is_priceless",
-    loc_txt = {
-        name = "Yet Hope Is Priceless",
-        text = { -- TODO: tweak description to use special colours and match any ability changes
-            "Start with -2 hand size,",
-            "gain +1 hand size for every",
-            "play or discard this round"
-        }
-    },
     atlas = "joker_yet_hope_is_priceless",
     discovered = true,
     rarity = 2,

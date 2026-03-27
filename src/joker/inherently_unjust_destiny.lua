@@ -20,13 +20,6 @@
 
 SMODS.Joker {
     key = "inherently_unjust_destiny",
-    loc_txt = {
-        name = "Inherently Unjust Destiny",
-        text = {
-            "Retrigger played cards",
-            "with {V:1}Spade{} suit"
-        }
-    },
     atlas = "joker_inherently_unjust_destiny",
     discovered = true,
     rarity = 2,

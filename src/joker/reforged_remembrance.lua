@@ -20,16 +20,6 @@
 
 SMODS.Joker {
     key = "reforged_remembrance",
-    loc_txt = {
-        name = "Reforged Remembrance",
-        text = {
-            "Every other {C:attention}Blind{},",
-            "create a {C:spectral}Spectral{} card",
-            "when {C:attention}Blind{} is selected",
-            "{C:inactive}(Must have room)",
-            "{C:inactive}({C:attention}#1#{C:inactive}/2 {C:attention}Blinds{C:inactive}){}"
-        }
-    },
     atlas = "joker_reforged_remembrance",
     config = {
         extra = {

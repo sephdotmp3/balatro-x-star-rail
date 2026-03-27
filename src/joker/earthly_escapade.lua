@@ -20,14 +20,6 @@
 
 SMODS.Joker {
     key = "earthly_escapade",
-    loc_txt = {
-        name = "Earthly Escapade",
-        text = {
-            "Randomly gives {C:chips}+#1#{} Chips,",
-            "{C:mult}+#2#{} Mult, {C:attention}$#3#{}, or",
-            "{C:white,X:mult}X#4#{} Mult when scored"
-        }
-    },
     atlas = "joker_earthly_escapade",
     config = {
         extra = {

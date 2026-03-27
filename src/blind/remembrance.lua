@@ -20,15 +20,6 @@
 
 SMODS.Blind {
     key = "remembrance",
-    loc_txt = {
-        name = "The Remembrance",
-        text = {
-            "Every type of card that",
-            "isn't found in your first",
-            "hand will be flipped for",
-            "the rest of the blind"
-        },
-    },
     atlas = "blind_remembrance",
     discovered = true,
     boss = {

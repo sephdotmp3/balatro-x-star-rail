@@ -20,21 +20,6 @@
 
 SMODS.Joker {
     key = "cruising_in_the_stellar_sea",
-    loc_txt = {
-        name = "Cruising in the Stellar Sea",
-        text = {
-            "Every Enhanced Joker,",
-            "Enhanced card played",
-            "and Enhanced card in your hand",
-            "gives {C:white,X:mult}X#1#{} Mult",
-            "{s:0.8,C:inactive}THEY cruise with the speed of a rainbow's chromatic flash.",
-            "{s:0.8,C:inactive}A journey of hunting undying abominations,",
-            "{s:0.8,C:inactive}collecting cures and miracles,",
-            "{s:0.8,C:inactive}and seeking deliverance.",
-            "{s:0.8,C:inactive}Akin to a vow unbroken, THEIR voyage will be,",
-            "{s:0.8,C:inactive}ad infinitum.",
-        }
-    },
     atlas = "joker_cruising_in_the_stellar_sea",
     config = {
         extra = {

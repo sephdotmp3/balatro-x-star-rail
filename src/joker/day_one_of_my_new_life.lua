@@ -20,13 +20,6 @@
 
 SMODS.Joker {
     key = "day_one_of_my_new_life",
-    loc_txt = {
-        name = "Day One of My New Life",
-        text = {
-            "Played {C:attention}7s{} give {C:chips}+#1#{} Chips",
-            "and {C:mult}+#2#{} Mult when scored"
-        }
-    },
     atlas = "joker_day_one_of_my_new_life",
     config = {
         extra = {

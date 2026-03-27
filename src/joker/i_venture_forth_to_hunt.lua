@@ -20,13 +20,6 @@
 
 SMODS.Joker {
     key = "i_venture_forth_to_hunt",
-    loc_txt = {
-        name = "I Venture Forth To Hunt",
-        text = {
-            "Enhanced cards give",
-            "{C:chips}+#1#{} Chips when scored"
-        }
-    },
     atlas = "joker_i_venture_forth_to_hunt",
     config = {
         extra = {

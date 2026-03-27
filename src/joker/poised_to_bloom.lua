@@ -20,12 +20,6 @@
 
 SMODS.Joker {
     key = "poised_to_bloom",
-    loc_txt = {
-        name = "Poised to Bloom",
-        text = {
-            "Retrigger all played {C:attention}7s{} twice"
-        }
-    },
     atlas = "joker_poised_to_bloom",
     discovered = true,
     rarity = 2,

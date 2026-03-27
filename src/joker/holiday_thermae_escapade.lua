@@ -20,15 +20,6 @@
 
 SMODS.Joker {
     key = "holiday_thermae_escapade",
-    loc_txt = {
-        name = "Holiday Thermae Escapade",
-        text = {
-            "This Joker gains {C:attention}#2#%{} of each",
-            "played {C:attention}poker hand's{} base Chips,",
-            "but clears {C:attention}#3#%{} after scoring",
-            "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips){}",
-        }
-    },
     atlas = "joker_holiday_thermae_escapade",
     config = {
         extra = {

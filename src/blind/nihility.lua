@@ -20,14 +20,6 @@
 
 SMODS.Blind {
     key = "nihility",
-    loc_txt = {
-        name = "The Nihility",
-        text = {
-            "Playing a #1#",
-            "debuffs a random Joker",
-            "during the next hand"
-        },
-    },
     atlas = "blind_nihility",
     discovered = true,
     boss = {

@@ -20,17 +20,6 @@
 
 SMODS.Joker {
     key = "echoes_of_the_coffin",
-    loc_txt = {
-        name = "Echoes of the Coffin",
-        text = {
-            "At the end of round,",
-            "gives {C:attention}$#1#{} for every",
-            "#2# cards remaining",
-            "in the {C:attention}deck{}",
-            "{C:inactive}(Currently {C:attention}$#3#{C:inactive})"
-
-        }
-    },
     atlas = "joker_echoes_of_the_coffin",
     config = {
         extra = {

@@ -20,14 +20,6 @@
 
 SMODS.Joker {
     key = "if_time_were_a_flower",
-    loc_txt = {
-        name = "If Time Were A Flower",
-        text = {
-            "Retrigger each card",
-            "played when playing a",
-            "{C:attention}#1#{}"
-        }
-    },
     atlas = "joker_if_time_were_a_flower",
     config = {
         extra = {

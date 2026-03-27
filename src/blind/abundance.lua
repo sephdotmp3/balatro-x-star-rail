@@ -20,15 +20,6 @@
 
 SMODS.Blind {
     key = "abundance",
-    loc_txt = {
-        name = "The Abundance",
-        text = {
-            "If played hand doesn't",
-            "beat blind, add #1#% of",
-            "its score to the",
-            "blind's required score",
-        },
-    },
     atlas = "blind_abundance",
     discovered = true,
     boss = {

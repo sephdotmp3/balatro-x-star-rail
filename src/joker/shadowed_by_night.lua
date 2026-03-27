@@ -20,13 +20,6 @@
 
 SMODS.Joker {
     key = "shadowed_by_night",
-    loc_txt = {
-        name = "Shadowed By Night",
-        text = {
-            "Every card in a {C:attention}High Card{}",
-            "gives {X:mult,C:white}X#1#{} Mult when scored",
-        }
-    },
     atlas = "joker_shadowed_by_night",
     config = {
         extra = {

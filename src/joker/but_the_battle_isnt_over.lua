@@ -25,12 +25,6 @@
 
 SMODS.Joker {
     key = "but_the_battle_isnt_over",
-    loc_txt = {
-        name = "But the Battle Isn't Over",
-        text = {
-            "Retrigger all {C:blue}#1#{} {C:attention}Jokers{}"
-        }
-    },
     atlas = "joker_but_the_battle_isnt_over",
     config = {
         extra = {

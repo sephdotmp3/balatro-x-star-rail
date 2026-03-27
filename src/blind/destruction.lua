@@ -20,13 +20,6 @@
 
 SMODS.Blind {
     key = "destruction",
-    loc_txt = {
-        name = "The Destruction",
-        text = {
-            "Played cards are",
-            "destroyed after scoring",
-        },
-    },
     atlas = "blind_destruction",
     discovered = true,
     boss = {

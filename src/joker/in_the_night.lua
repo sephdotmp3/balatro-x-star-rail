@@ -20,13 +20,6 @@
 
 SMODS.Joker {
     key = "in_the_night",
-    loc_txt = {
-        name = "In The Night",
-        text = {
-            "{C:green}#1# in #2#{} chance for {X:mult,C:white}X#3#{} Mult,",
-            "{C:mult}+#4#{} Mult otherwise"
-        }
-    },
     atlas = "joker_in_the_night",
     config = {
         extra = {

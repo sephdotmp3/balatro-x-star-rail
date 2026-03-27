@@ -20,14 +20,6 @@
 
 SMODS.Joker {
     key = "this_love_forever",
-    loc_txt = {
-        name = "This Love, Forever",
-        text = {
-            "This Joker gains {C:mult}+#2#{} Mult for every",
-            "{C:tarot}Arcana{} and {C:spectral}Spectral{} Pack opened",
-            "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}",
-        }
-    },
     atlas = "joker_this_love_forever",
     config = {
         extra = {

@@ -20,15 +20,6 @@
 
 SMODS.Blind {
     key = "erudition",
-    loc_txt = {
-        name = "The Erudition",
-        text = {
-            "Must play #1#",
-            "on odd hands,",
-            "but cannot play #1#",
-            "on even hands",
-        },
-    },
     atlas = "blind_erudition",
     discovered = true,
     boss = {

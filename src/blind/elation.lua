@@ -20,15 +20,6 @@
 
 SMODS.Blind {
     key = "elation",
-    loc_txt = {
-        name = "The Elation",
-        text = {
-            "Start with a random number",
-            "of hands and discards,",
-            "reward and required score",
-            "is randomized",
-        },
-    },
     atlas = "blind_elation",
     discovered = true,
     boss = {
@@ -70,6 +61,7 @@ SMODS.Blind {
 
         -- taken from polterworx
 		G.GAME.blind.dollars = math.floor(11*reward_random)
+        --- @diagnostic disable-next-line: param-type-mismatch
 		G.GAME.current_round.dollars_to_be_earned = G.GAME.blind.dollars > 8 and ('$' .. G.GAME.blind.dollars) or (string.rep(localize('$'), G.GAME.blind.dollars)..'')
 		G.HUD_blind:get_UIE_by_ID("dollars_to_be_earned").config.object:update_text()
 
@@ -90,6 +82,7 @@ SMODS.Blind {
         end
         if G.GAME.blind.dollars < 5 then
 		    G.GAME.blind.dollars = 5
+            --- @diagnostic disable-next-line: param-type-mismatch
 		    G.GAME.current_round.dollars_to_be_earned = G.GAME.blind.dollars > 8 and ('$' .. G.GAME.blind.dollars) or (string.rep(localize('$'), G.GAME.blind.dollars)..'')
 		    G.HUD_blind:get_UIE_by_ID("dollars_to_be_earned").config.object:update_text()
         end

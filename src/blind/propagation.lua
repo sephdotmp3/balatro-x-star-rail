@@ -20,14 +20,6 @@
 
 SMODS.Blind {
     key = "propagation",
-    loc_txt = {
-        name = "The Propagation",
-        text = {
-            "Every other card played",
-            "adds a Swarm Card",
-            "to your deck",
-        },
-    },
     atlas = "blind_propagation",
     discovered = true,
     boss = {

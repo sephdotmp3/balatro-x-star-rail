@@ -20,16 +20,6 @@
 
 SMODS.Joker {
     key = "time_woven_into_gold",
-    loc_txt = {
-        name = "Time Woven Into Gold",
-        text = {
-            "Playing your most played",
-            "{C:attention}poker hand{} grants {C:blue}+#1#{} hand,",
-            "but {C:attention}-#2#{} hand size",
-            "{C:inactive}(resets after round end, hand",
-            "{C:inactive}size will not go below #3#)"
-        }
-    },
     atlas = "joker_time_woven_into_gold",
     config = {
         extra = {
