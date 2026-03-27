@@ -104,7 +104,7 @@ return {
 			j_bxsr_but_the_battle_isnt_over = {
 				name = "But the Battle Isn't Over",
 				text = {
-					"Retrigger all {C:blue}#1#{} {C:attention}Jokers{}",
+					"Retrigger all {V:1}#1#{} {C:attention}Jokers{}",
 				},
 			},
 			j_bxsr_reforged_remembrance = {

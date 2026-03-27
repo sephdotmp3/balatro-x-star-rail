@@ -45,7 +45,10 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.targeted_rarity
+                card.ability.extra.targeted_rarity,
+                colours = {
+                    G.C.RARITY.Common
+                }
             }
         }
     end
