@@ -23,10 +23,10 @@ SMODS.Joker {
     atlas = "joker_in_the_night",
     config = {
         extra = {
-            numerator = 2,
-            denominator = 3,
-            xmult = 2.5,
-            mult = 4,
+            numerator = 1,
+            denominator = 5,
+            xmult = 3,
+            mult = 3,
         }
     },
     discovered = true,
@@ -35,7 +35,7 @@ SMODS.Joker {
     blueprint_compat = true,
     calculate = function(self, card, context)
 	    if context.joker_main then
-            if SMODS.pseudorandom_probability(card, "crit_whiffer", card.ability.extra.numerator, card.ability.extra.denominator) then
+            if SMODS.pseudorandom_probability(card, "crit_whiffer", card.ability.extra.numerator*#G.jokers.cards, card.ability.extra.denominator) then
 		        return {
 			        xmult = card.ability.extra.xmult
 		        }
@@ -47,13 +47,21 @@ SMODS.Joker {
 	    end
     end,
     loc_vars = function(self, info_queue, card)
-	    local num, denom = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator, "bxsr_in_the_night")
+        local jokers_num
+        if G.jokers ~= nil and G.jokers.cards ~= nil then
+            jokers_num = #G.jokers.cards
+        else
+            jokers_num = 0
+        end
+	    local num, denom = SMODS.get_probability_vars(card, card.ability.extra.numerator*jokers_num, card.ability.extra.denominator, "bxsr_in_the_night_adjusted")
+	    local per_num, _ = SMODS.get_probability_vars(card, card.ability.extra.numerator, card.ability.extra.denominator, "bxsr_in_the_night_base")
 	    return {
             vars = {
-                num,
+                per_num,
                 denom,
                 card.ability.extra.xmult,
                 card.ability.extra.mult,
+                num,
             }
         }
     end,

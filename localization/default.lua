@@ -86,8 +86,10 @@ return {
 			j_bxsr_in_the_night = {
 				name = "In The Night",
 				text = {
-					"{C:green}#1# in #2#{} chance for {X:mult,C:white}X#3#{} Mult,",
+					"{C:green}+#1# in #2#{} chance for",
+					"{C:white,X:mult}X#3#{} Mult per {C:attention}Joker{} card,",
 					"{C:mult}+#4#{} Mult otherwise",
+					"{C:inactive}(Currently{} {C:green}#5# in #2#{} {C:inactive}chance)"
 				},
 			},
 			j_bxsr_along_the_passing_shore = {

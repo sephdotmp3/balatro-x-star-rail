@@ -66,7 +66,7 @@ TODO: add proper description
 ### In The Night
 <img src="assets/2x/joker/in_the_night.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-**2 in 3** chance for **2.5X** Mult, **+4** Mult otherwise
+**+1 in 5** chance for **X3** Mult per **Joker** card, **+3** Mult otherwise
 
 ### Inherently Unjust Destiny
 <img src="assets/2x/joker/inherently_unjust_destiny.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
