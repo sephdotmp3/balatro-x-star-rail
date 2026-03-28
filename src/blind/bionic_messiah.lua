@@ -22,15 +22,6 @@ SMODS.Blind {
     key = "bionic_messiah",
     atlas = "blind_bionic_messiah",
     discovered = true,
-    loc_txt = {
-        name = "Bionic Messiah",
-        text = {
-            "If a played #1#",
-            "does not beat blind,",
-            "add its score to this",
-            "blind's required score"
-        }
-    },
     boss = {
         showdown = true
     },
