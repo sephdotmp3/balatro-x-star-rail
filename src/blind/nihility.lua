@@ -25,8 +25,39 @@ SMODS.Blind {
     boss = {
         min = 4,
     },
+    config = {
+        extra = {
+            debuffed_joker = nil
+        }
+    },
     boss_colour = HEX("2abece"),
-    -- TODO: add functionality
+    calculate = function(self, blind, context)
+        if context.after and not blind.disabled then
+            G.E_MANAGER:add_event(Event({
+                func = function ()
+                    if blind.effect.extra.debuffed_joker ~= nil then
+                        blind.effect.extra.debuffed_joker.debuffed_by_blind = false
+                        blind.effect.extra.debuffed_joker:set_debuff(false)
+                        blind.effect.extra.debuffed_joker:juice_up()
+                    end
+                    blind.effect.extra.debuffed_joker = nil
+                    if context.scoring_name == G.GAME.current_round.most_played_poker_hand and not context.end_of_round then
+                        blind.effect.extra.debuffed_joker = pseudorandom_element(G.jokers.cards,"ix_the_nihility")
+                        blind.effect.extra.debuffed_joker.debuffed_by_blind = true
+                        blind.effect.extra.debuffed_joker:set_debuff(true)
+                        blind.effect.extra.debuffed_joker:juice_up()
+                        blind:wiggle()
+                    end
+                    return true
+                end
+            }))
+        end
+    end,
+    disable = function(self)
+        G.GAME.blind.effect.extra.debuffed_joker.debuffed_by_blind = false
+        G.GAME.blind.effect.extra.debuffed_joker:set_debuff(false)
+        G.GAME.blind.effect.extra.debuffed_joker:juice_up()
+    end,
     loc_vars = function(self)
         return {
             vars = {
