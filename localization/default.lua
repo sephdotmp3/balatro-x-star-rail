@@ -382,7 +382,7 @@ return {
 					"the same rank or suit",
 				},
 			},
-			bl_bsxr_bionic_messiah = {
+			bl_bxsr_bionic_messiah = {
         		name = "Bionic Messiah",
         		text = {
             		"If a played #1#",

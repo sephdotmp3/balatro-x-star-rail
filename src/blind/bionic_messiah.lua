@@ -26,6 +26,7 @@ SMODS.Blind {
         showdown = true
     },
     boss_colour = HEX("d4b744"),
+    -- TODO: implement blind
     loc_vars = function(self)
         return {
             vars = {
