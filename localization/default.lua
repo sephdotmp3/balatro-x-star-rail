@@ -391,6 +391,15 @@ return {
             		"blind's required score"
         		}
     		},
+    		bl_bxsr_conflict_author = {
+        		name = "Conflict Author",
+        		text = {
+            		"After play, randomly",
+            		"destroys played hand,",
+            		"all cards in hand,",
+            		"or a random Joker"
+        		}
+    		},
 		},
 	},
 }

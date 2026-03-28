@@ -1,5 +1,5 @@
 --[[
- * blind.lua
+ * conflict_author.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -18,18 +18,13 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
--- Boss Blinds
-assert(SMODS.load_file("src/blind/abundance.lua"))()
-assert(SMODS.load_file("src/blind/destruction.lua"))()
-assert(SMODS.load_file("src/blind/elation.lua"))()
-assert(SMODS.load_file("src/blind/erudition.lua"))()
-assert(SMODS.load_file("src/blind/harmony.lua"))()
-assert(SMODS.load_file("src/blind/nihility.lua"))()
-assert(SMODS.load_file("src/blind/preservation.lua"))()
-assert(SMODS.load_file("src/blind/propagation.lua"))()
-assert(SMODS.load_file("src/blind/remembrance.lua"))()
-assert(SMODS.load_file("src/blind/the_hunt.lua"))()
-
--- Finisher Blinds
-assert(SMODS.load_file("src/blind/bionic_messiah.lua"))()
-assert(SMODS.load_file("src/blind/conflict_author.lua"))()
+SMODS.Blind {
+    key = "conflict_author",
+    atlas = "blind_conflict_author",
+    discovered = true,
+    boss = {
+        showdown = true
+    },
+    boss_colour = HEX("d4b744"),
+    -- TODO: implement blind
+}
