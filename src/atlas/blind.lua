@@ -46,6 +46,15 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+    key = "blind_calamity_worker",
+    path = "blind/calamity_worker.png",
+    px = 34,
+    py = 34,
+    frames = 21,
+    atlas_table = "ANIMATION_ATLAS"
+}
+
+SMODS.Atlas {
     key = "blind_conflict_author",
     path = "blind/conflict_author.png",
     px = 34,

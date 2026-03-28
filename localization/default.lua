@@ -400,6 +400,16 @@ return {
             		"blind's required score"
         		}
     		},
+			bl_bxsr_calamity_worker = {
+        		name = "Calamity Worker",
+        		text = {
+            		"For every $#1# below",
+            		"the number of cards",
+            		"in your deck,",
+            		"converts a random card",
+            		"into a Swarm Card"
+        		}
+    		},
     		bl_bxsr_conflict_author = {
         		name = "Conflict Author",
         		text = {
