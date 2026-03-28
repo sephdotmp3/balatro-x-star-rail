@@ -382,6 +382,15 @@ return {
 					"the same rank or suit",
 				},
 			},
+			bl_bsxr_bionic_messiah = {
+        		name = "Bionic Messiah",
+        		text = {
+            		"If a played #1#",
+            		"does not beat blind,",
+            		"add its score to this",
+            		"blind's required score"
+        		}
+    		},
 		},
 	},
 }

@@ -18,6 +18,7 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
+-- Boss Blinds
 assert(SMODS.load_file("src/blind/abundance.lua"))()
 assert(SMODS.load_file("src/blind/destruction.lua"))()
 assert(SMODS.load_file("src/blind/elation.lua"))()
@@ -28,3 +29,6 @@ assert(SMODS.load_file("src/blind/preservation.lua"))()
 assert(SMODS.load_file("src/blind/propagation.lua"))()
 assert(SMODS.load_file("src/blind/remembrance.lua"))()
 assert(SMODS.load_file("src/blind/the_hunt.lua"))()
+
+-- Finisher Blinds
+assert(SMODS.load_file("src/blind/bionic_messiah.lua"))()
