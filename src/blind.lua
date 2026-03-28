@@ -31,6 +31,7 @@ assert(SMODS.load_file("src/blind/remembrance.lua"))()
 assert(SMODS.load_file("src/blind/the_hunt.lua"))()
 
 -- Finisher Blinds
+assert(SMODS.load_file("src/blind/appliance_druid.lua"))()
 assert(SMODS.load_file("src/blind/bionic_messiah.lua"))()
 assert(SMODS.load_file("src/blind/conflict_author.lua"))()
 assert(SMODS.load_file("src/blind/relative_tracer.lua"))()
