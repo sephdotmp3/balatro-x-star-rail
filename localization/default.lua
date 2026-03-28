@@ -382,15 +382,6 @@ return {
 					"the same rank or suit",
 				},
 			},
-			bl_bxsr_appliance_druid = {
-        		name = "Appliance Druid",
-        		text = {
-            		"Odd hands must contain",
-            		"only one type of card,",
-            		"but even hands cannot",
-            		"contain duplicate cards"
-        		}
-			},
 			bl_bxsr_bionic_messiah = {
         		name = "Bionic Messiah",
         		text = {
@@ -419,6 +410,15 @@ return {
             		"or a random Joker"
         		}
     		},
+			bl_bxsr_note_thief = {
+        		name = "Note Thief",
+        		text = {
+            		"Odd hands must contain",
+            		"only one type of card,",
+            		"but even hands cannot",
+            		"contain duplicate cards"
+        		}
+			},
     		bl_bxsr_relative_tracer = {
         		name = "Relative Tracer",
         		text = {

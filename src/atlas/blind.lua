@@ -28,15 +28,6 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-    key = "blind_appliance_druid",
-    path = "blind/appliance_druid.png",
-    px = 34,
-    py = 34,
-    frames = 21,
-    atlas_table = "ANIMATION_ATLAS"
-}
-
-SMODS.Atlas {
     key = "blind_bionic_messiah",
     path = "blind/bionic_messiah.png",
     px = 34,
@@ -102,6 +93,15 @@ SMODS.Atlas {
 SMODS.Atlas {
     key = "blind_nihility",
     path = "blind/nihility.png",
+    px = 34,
+    py = 34,
+    frames = 21,
+    atlas_table = "ANIMATION_ATLAS"
+}
+
+SMODS.Atlas {
+    key = "blind_note_thief",
+    path = "blind/note_thief.png",
     px = 34,
     py = 34,
     frames = 21,

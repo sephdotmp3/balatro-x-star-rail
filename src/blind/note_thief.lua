@@ -1,5 +1,5 @@
 --[[
- * appliance_druid.lua
+ * note_thief.lua
  * This file is part of Balatro x Star Rail
  *
  * Copyright (C) 2026 sephdotwmv
@@ -19,12 +19,12 @@
 ]]
 
 SMODS.Blind {
-    key = "appliance_druid",
-    atlas = "blind_appliance_druid",
+    key = "note_thief",
+    atlas = "blind_note_thief",
     discovered = true,
     boss = {
         showdown = true
     },
-    boss_colour = HEX("d4b744"),
+    boss_colour = HEX("c45cd6"),
     -- TODO: implement blind
 }
