@@ -400,6 +400,16 @@ return {
             		"or a random Joker"
         		}
     		},
+    		bl_bxsr_relative_tracer = {
+        		name = "Relative Tracer",
+        		text = {
+            		"Debuffs every type of",
+            		"card that isn't found",
+            		"in your first hand,",
+            		"cannot play hands",
+            		"with debuffed cards"
+        		},
+    		},
 		},
 	},
 }
