@@ -23,6 +23,14 @@ SMODS.Joker {
     atlas = "joker_night_of_fright",
     discovered = true,
     rarity = 1,
-    cost = 4,
-    -- TODO: write the actual calculate function
+    cost = 5,
+    calculate = function (self, card, context)
+        -- world record for the longest if statement!!
+        if (context.hand_drawn or context.after) and G.GAME.current_round.hands_left == 1 and G.GAME.blind and ((not G.GAME.blind.disabled) and (G.GAME.blind:get_type() == 'Boss')) and not context.blueprint then
+            G.GAME.blind:disable()
+            return {
+                message = localize('ph_boss_disabled')
+            }
+        end
+    end
 }
