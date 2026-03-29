@@ -397,8 +397,8 @@ return {
             		"For every $#1# below",
             		"the number of cards",
             		"in your deck,",
-            		"converts a random card",
-            		"into a Swarm Card"
+					"adds a Swarm Card",
+					"to your deck"
         		}
     		},
     		bl_bxsr_conflict_author = {
