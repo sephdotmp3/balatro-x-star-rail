@@ -191,10 +191,11 @@ return {
 			},
 			j_bxsr_yet_hope_is_priceless = {
 				name = "Yet Hope Is Priceless",
-				text = { -- TODO: tweak description so this thing is balanced
-					"Start with -2 hand size,",
-					"gain +1 hand size for every",
-					"play or discard this round",
+				text = {
+					"Start with {C:attention}-#1#{} hand size,",
+					"gain {C:attention}+#2#{} hand size for",
+					"every {C:blue}play{} or {C:red}discard{}",
+					"{C:inactive}(Resets after round end){}"
 				},
 			},
 			j_bxsr_to_evernights_stars = {
