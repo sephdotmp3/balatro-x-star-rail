@@ -101,7 +101,7 @@ This Joker gains **+20** Chips for every **Four of a Kind** played
 ### Yet Hope Is Priceless
 <img src="assets/2x/joker/yet_hope_is_priceless.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-TODO: balance this thing
+Start with **-3** hand size, gain **+1** hand size for every **play** or **discard** (Resets after round end)
 
 ## Rare Jokers
 ### A Secret Vow
@@ -160,7 +160,8 @@ This Joker gains **X0.1** Mult for every card played
 
 Prevents Death once, then **self-destructs**
 
-# New Boss Blinds
+# New Blinds
+## Boss Blinds
 ### The Abundance
 TODO: gif for this
 
@@ -210,3 +211,29 @@ Every type of card that isn't found in your first hand will be flipped for the r
 <img src="readme-assets/the_hunt.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 A (most played hand) is worth 0.4x, but all other hands are worth 1.5x
+
+## Finisher Blinds
+### Bionic Messiah
+TODO: gif for this
+
+If a played (most played hand) does not beat blind, add its score to this blind's required score
+
+### Calamity Worker
+TODO: gif for this
+
+Adds a Swarm Card to your deck for every $1 below the number of cards in your deck
+
+### Conflict Author
+TODO: gif for this
+
+After play, randomly destroys played hand, all cards in hand, or a random Joker
+
+### Note Thief
+TODO: gif for this
+
+Odd hands must contain only one type of card, but even hands cannot contain duplicate cards
+
+### Relative Tracer
+TODO: gif for this
+
+Debuffs every type of card that isn't found in your first hand, cannot play hands with debuffed cards

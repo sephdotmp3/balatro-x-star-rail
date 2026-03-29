@@ -395,11 +395,11 @@ return {
 			bl_bxsr_calamity_worker = {
         		name = "Calamity Worker",
         		text = {
-            		"For every $#1# below",
-            		"the number of cards",
-            		"in your deck,",
-					"adds a Swarm Card",
-					"to your deck"
+					"Adds a Swarm Card",
+					"to your deck for",
+					"every $#1# below",
+					"the number of cards",
+					"in your deck"
         		}
     		},
     		bl_bxsr_conflict_author = {
