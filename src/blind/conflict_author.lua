@@ -26,5 +26,16 @@ SMODS.Blind {
         showdown = true
     },
     boss_colour = HEX("d4b744"),
-    -- TODO: implement blind
+    bxsr_after_play = function(self)
+        if not G.GAME.blind.disabled then
+            local selection = pseudorandom("destruction_x_elation")
+            if selection <= 0.3333 then
+                SMODS.destroy_cards(G.play.cards)
+            elseif selection <= 0.6667 then
+                SMODS.destroy_cards(G.hand.cards)
+            else
+                SMODS.destroy_cards(pseudorandom_element(G.jokers.cards,"elation_x_destruction"))
+            end
+        end
+    end
 }
