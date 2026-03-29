@@ -25,8 +25,44 @@ SMODS.Blind {
     boss = {
         showdown = true
     },
+    config = {
+        extra = {
+            previous_score = 0,
+            total_score_increase = 0,
+        }
+    },
     boss_colour = HEX("d4b744"),
-    -- TODO: implement blind
+    calculate = function(self, blind, context)
+        if context.after and context.scoring_name == G.GAME.current_round.most_played_poker_hand then
+            G.E_MANAGER:add_event(Event({
+    		    func = function()
+                local hand_score = G.GAME.chips - blind.effect.extra.previous_score
+                    if G.GAME.chips < blind.chips and not blind.disabled then
+			            blind:wiggle()
+                        local current_increase = hand_score
+                        blind.effect.extra.total_score_increase = blind.effect.extra.total_score_increase + current_increase
+                        blind.chips = blind.chips + current_increase
+			            G.E_MANAGER:add_event(Event({
+				            trigger = 'ease',
+				            blocking = false,
+				            ref_table = G.GAME.blind,
+				            ref_value = 'chip_text',
+				            ease_to = G.GAME.blind.chips,
+				            delay = 0.5,
+				            func = (function(t)
+                                return math.floor(t)
+                            end)
+			            }))
+		            end
+        		return true
+ 			end
+		}))
+        end
+    end,
+    disable = function(self)
+        G.GAME.blind.chips = G.GAME.blind.chips - G.GAME.blind.effect.extra.total_score_increase
+        G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+    end,
     loc_vars = function(self)
         return {
             vars = {
