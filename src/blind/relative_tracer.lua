@@ -25,6 +25,134 @@ SMODS.Blind {
     boss = {
         showdown = true
     },
+    config = {
+        extra = {
+            first_hand_cards = {}
+        }
+    },
     boss_colour = HEX("d4b744"),
-    -- TODO: implement blind
+    press_play = function(self)
+        G.E_MANAGER:add_event(Event({
+            blocking = false,
+            func = function()
+                if #G.play.cards == 0 then
+                    return false
+                end
+
+                if #G.GAME.blind.effect.extra.first_hand_cards > 0 then
+                    return true
+                end
+                for _, card in pairs(G.play.cards) do
+                    local card_suit
+                    if SMODS.has_no_suit(card) then
+                        card_suit = "none"
+                    elseif SMODS.has_any_suit(card) then
+                        card_suit = "any"
+                    else
+                        card_suit = card.base.suit
+                    end
+
+                    local card_rank
+                    if SMODS.has_no_rank(card) then
+                        card_rank = "none"
+                    else
+                        card_rank = card:get_id()
+                    end
+
+                    local insert_card = {
+                        rank = card_rank,
+                        suit = card_suit
+                    }
+                    table.insert(G.GAME.blind.effect.extra.first_hand_cards, insert_card)
+                end
+                
+                for _, card in pairs(G.hand.cards) do
+                    for _, first_hand_card in pairs(G.GAME.blind.effect.extra.first_hand_cards) do
+                        local suit_violated
+                        if SMODS.has_any_suit(card) or first_hand_card.suit == "any" then
+                            suit_violated = false
+                        elseif SMODS.has_no_suit(card) and first_hand_card.suit == "none" then
+                            suit_violated = false
+                        else
+                            suit_violated = first_hand_card.suit ~= card.base.suit
+                        end
+
+                        local rank_violated
+                        if SMODS.has_no_rank(card) and first_hand_card.rank == "none" then
+                            rank_violated = false
+                        else
+                            rank_violated = first_hand_card.rank ~= card:get_id()
+                        end
+
+                        if not (rank_violated or suit_violated) or G.GAME.blind.disabled then
+                            goto should_not_debuff
+                        end
+                    end
+
+                    card.debuffed_by_blind = true
+                    card:set_debuff(true)
+                    card:juice_up()
+
+                    ::should_not_debuff::
+                end
+
+
+                for _, card in pairs(G.deck.cards) do
+                    for _, first_hand_card in pairs(G.GAME.blind.effect.extra.first_hand_cards) do
+                        local suit_violated
+                        if SMODS.has_any_suit(card) or first_hand_card.suit == "any" then
+                            suit_violated = false
+                        elseif SMODS.has_no_suit(card) and first_hand_card.suit == "none" then
+                            suit_violated = false
+                        else
+                            suit_violated = first_hand_card.suit ~= card.base.suit
+                        end
+
+                        local rank_violated
+                        if SMODS.has_no_rank(card) and first_hand_card.rank == "none" then
+                            rank_violated = false
+                        else
+                            rank_violated = first_hand_card.rank ~= card:get_id()
+                        end
+
+                        if not (rank_violated or suit_violated) or G.GAME.blind.disabled then
+                            goto should_not_debuff
+                        end
+                    end
+
+                    card.debuffed_by_blind = true
+                    card:set_debuff(true)
+
+                    ::should_not_debuff::
+                end
+                return true
+            end
+        }))
+    end,
+    debuff_hand = function (self, cards, hand, handname, check)
+        if G.GAME.blind.disabled then
+            return false
+        end
+        for _, card in ipairs(cards) do
+            if card.debuff then
+                return true
+            end
+        end
+        return false
+    end,
+    get_loc_debuff_text = function (self)
+        return "Hand cannot contain debuffed cards"
+    end,
+    disable = function(self)
+        for i = 1, #G.hand.cards do
+            G.hand.cards[i].debuffed_by_blind = false
+            G.hand.cards[i].debuffed_by_blind:set_debuff()
+        end
+
+        for i = 1, #G.deck.cards do
+            G.hand.cards[i].debuffed_by_blind = false
+            G.hand.cards[i].debuffed_by_blind:set_debuff()
+        end
+    end
+
 }
