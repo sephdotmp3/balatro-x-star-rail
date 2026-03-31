@@ -27,12 +27,68 @@ SMODS.Blind {
     },
     config = {
         extra = {
-            blind_increase_percent = 10,
+            blind_increase_percent = 7,
             recorded_cards = {}
         }
     },
     boss_colour = HEX("c45cd6"),
-    -- TODO: implement blind
+    modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
+        local prev_recorded_cards = #G.GAME.blind.effect.extra.recorded_cards
+
+        for _, card in pairs(cards) do
+            local card_suit
+            -- ok i just realized this system does not respect smudged joker but yk what that could be fixed later
+            -- it's already a hassle to deal with wild cards so can you blame me for this
+            if SMODS.has_no_suit(card) then
+                card_suit = "none"
+            elseif SMODS.has_any_suit(card) then
+                card_suit = "any"
+            else
+                card_suit = card.base.suit
+            end
+
+            local card_rank
+            if SMODS.has_no_rank(card) then
+                card_rank = "none"
+            else
+                card_rank = card:get_id()
+            end
+
+            local insert_card = {
+                rank = card_rank,
+                suit = card_suit
+            }
+
+            local should_insert = true
+            for _, other_card in pairs(G.GAME.blind.effect.extra.recorded_cards) do
+                if insert_card.suit == "any" and insert_card.rank == other_card.rank and other_card.suit ~= "any" then
+                    other_card.suit = "any"
+                    prev_recorded_cards = prev_recorded_cards - 1
+                    should_insert = false
+                    break
+                elseif other_card.suit == "any" and insert_card.rank == other_card.rank then
+                    should_insert = false
+                    break
+                elseif insert_card.suit == other_card.suit and insert_card.rank == other_card.rank then
+                    should_insert = false
+                    break
+                end
+            end
+
+            if should_insert then
+                table.insert(G.GAME.blind.effect.extra.recorded_cards, insert_card)
+            end
+        end
+
+        local unique_increase = #G.GAME.blind.effect.extra.recorded_cards - prev_recorded_cards
+		G.GAME.blind:wiggle()
+        local multiplier = (1+G.GAME.blind.effect.extra.blind_increase_percent/100)^unique_increase
+        G.GAME.blind.chips = G.GAME.blind.chips * multiplier
+        G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+
+        return mult, hand_chips, false
+    end,
+    -- TODO: handle disabling of blind
     loc_vars = function(self)
         return {
             vars = {
