@@ -237,3 +237,11 @@ Odd hands must contain only one type of card, but even hands cannot contain dupl
 TODO: gif for this
 
 Debuffs every type of card that isn't found in your first hand, cannot play hands with debuffed cards
+
+# Credits
+
+Programming, concepts and blind textures: sephdotwmv
+
+Light Cone Jokers and finisher blind textures: taken from Honkai: Star Rail and edited by sephdotwmv
+
+Swarm Card texture: [@JustCallMe_Anti](https://x.com/JustCallMe_Anti)
