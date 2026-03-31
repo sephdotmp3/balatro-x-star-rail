@@ -25,6 +25,19 @@ SMODS.Blind {
     boss = {
         showdown = true
     },
+    config = {
+        extra = {
+            blind_increase_percent = 10,
+            recorded_cards = {}
+        }
+    },
     boss_colour = HEX("c45cd6"),
     -- TODO: implement blind
+    loc_vars = function(self)
+        return {
+            vars = {
+                self.config.extra.blind_increase_percent
+            }
+        }
+    end
 }

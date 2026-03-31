@@ -414,10 +414,9 @@ return {
 			bl_bxsr_note_thief = {
         		name = "Note Thief",
         		text = {
-            		"Odd hands must contain",
-            		"only one type of card,",
-            		"but even hands cannot",
-            		"contain duplicate cards"
+					"Every unique card",
+					"played increases this",
+					"blind's score by 10%",
         		}
 			},
     		bl_bxsr_relative_tracer = {
