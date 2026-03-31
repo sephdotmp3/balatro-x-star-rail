@@ -231,7 +231,7 @@ After play, randomly destroys played hand, all cards in hand, or a random Joker
 ### Note Thief
 TODO: gif for this
 
-Odd hands must contain only one type of card, but even hands cannot contain duplicate cards
+Every unique card played increases this blind's score by 10%
 
 ### Relative Tracer
 TODO: gif for this
@@ -239,7 +239,6 @@ TODO: gif for this
 Debuffs every type of card that isn't found in your first hand, cannot play hands with debuffed cards
 
 # Credits
-
 Programming, concepts and blind textures: sephdotwmv
 
 Light Cone Jokers and finisher blind textures: taken from Honkai: Star Rail and edited by sephdotwmv

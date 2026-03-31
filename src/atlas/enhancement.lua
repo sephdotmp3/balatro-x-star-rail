@@ -18,7 +18,7 @@
  * along with Balatro x Star Rail; if not, see <https://www.gnu.org/licenses/>.
 ]]
 
-SMODS.Atlas { -- TODO: remove programmer art
+SMODS.Atlas {
   key = "enhancement_swarm",
   path = "enhancement/swarm.png",
   px = 71,
