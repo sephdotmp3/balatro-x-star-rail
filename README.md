@@ -198,7 +198,7 @@ Playing a (most played hand) debuffs a random Joker during the next hand
 Every $5 below $20 increases blind's required score by 1X base score
 
 ### The Propagation
-TODO: gif for this
+<img src="readme-assets/propagation.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 Every other card played adds a Swarm Card to your deck
 
@@ -214,27 +214,27 @@ A (most played hand) is worth 0.4x, but all other hands are worth 1.5x
 
 ## Finisher Blinds
 ### Bionic Messiah
-TODO: gif for this
+<img src="readme-assets/bionic_messiah.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 If a played (most played hand) does not beat blind, add its score to this blind's required score
 
 ### Calamity Worker
-TODO: gif for this
+<img src="readme-assets/calamity_worker.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 Adds a Swarm Card to your deck for every $1 below the number of cards in your deck
 
 ### Conflict Author
-TODO: gif for this
+<img src="readme-assets/conflict_author.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 After play, randomly destroys played hand, all cards in hand, or a random Joker
 
 ### Note Thief
-TODO: gif for this
+<img src="readme-assets/note_thief.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 Every unique card played increases this blind's score by 10%
 
 ### Relative Tracer
-TODO: gif for this
+<img src="readme-assets/relative_tracer.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 Debuffs every type of card that isn't found in your first hand, cannot play hands with debuffed cards
 
