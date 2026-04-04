@@ -163,7 +163,7 @@ Prevents Death once, then **self-destructs**
 # New Blinds
 ## Boss Blinds
 ### The Abundance
-TODO: gif for this
+<img src="readme-assets/abundance.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 If played hand doesn't beat blind, add 50% of its score to the blind's required score
 
