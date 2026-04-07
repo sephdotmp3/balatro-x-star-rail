@@ -42,17 +42,7 @@ SMODS.Blind {
                         local current_increase = hand_score
                         blind.effect.extra.total_score_increase = blind.effect.extra.total_score_increase + current_increase
                         blind.chips = blind.chips + current_increase
-			            G.E_MANAGER:add_event(Event({
-				            trigger = 'ease',
-				            blocking = false,
-				            ref_table = G.GAME.blind,
-				            ref_value = 'chip_text',
-				            ease_to = G.GAME.blind.chips,
-				            delay = 0.5,
-				            func = (function(t)
-                                return math.floor(t)
-                            end)
-			            }))
+                        blind.chip_text = number_format(G.GAME.blind.chips)
 		            end
         		return true
  			end
