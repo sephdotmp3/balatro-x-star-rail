@@ -29,7 +29,7 @@ SMODS.Joker {
     },
     discovered = true,
     rarity = 3,
-    cost = 8,
+    cost = 9,
     eternal_compat = false,
     calculate = function(self, card, context)
         if context.selling_card and context.card ~= card and context.card.area == G.jokers and not context.blueprint and card.ability.extra.sold_jokers < card.ability.extra.required_sells then

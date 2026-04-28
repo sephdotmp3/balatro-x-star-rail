@@ -33,7 +33,7 @@ SMODS.Joker {
     },
     discovered = true,
     rarity = 3,
-    cost = 9,
+    cost = 10,
     blueprint_compat = true,
     calculate = function(self, card, context)
         if context.retrigger_joker_check and context.other_card:is_rarity(card.ability.extra.targeted_rarity) then
