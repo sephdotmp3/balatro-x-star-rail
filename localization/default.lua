@@ -369,7 +369,7 @@ return {
 				text = {
 					"Playing a #1#",
 					"debuffs a random Joker",
-					"during the next hand",
+					"for the rest of the blind",
 				},
 			},
 			bl_bxsr_propagation = {

@@ -190,7 +190,7 @@ All played cards must have the same rank or suit
 ### The Nihility
 <img src="readme-assets/nihility.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-Playing a (most played hand) debuffs a random Joker during the next hand
+Playing a (most played hand) debuffs a random Joker for the rest of the blind
 
 ### The Preservation
 <img src="readme-assets/preservation.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">

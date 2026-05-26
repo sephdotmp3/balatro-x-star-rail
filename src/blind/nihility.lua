@@ -27,7 +27,7 @@ SMODS.Blind {
     },
     config = {
         extra = {
-            debuffed_joker = nil
+            debuffed_jokers = {}
         }
     },
     boss_colour = HEX("2abece"),
@@ -35,17 +35,32 @@ SMODS.Blind {
         if context.after and not blind.disabled then
             G.E_MANAGER:add_event(Event({
                 func = function ()
-                    if blind.effect.extra.debuffed_joker ~= nil then
-                        blind.effect.extra.debuffed_joker.debuffed_by_blind = false
-                        blind.effect.extra.debuffed_joker:set_debuff(false)
-                        blind.effect.extra.debuffed_joker:juice_up()
+                    if G.GAME.chips >= G.GAME.blind.chips then
+                        if #G.GAME.blind.effect.extra.debuffed_jokers == 0 then
+                            return true
+                        end
+                        for _, joker in pairs(G.GAME.blind.effect.extra.debuffed_jokers) do
+                            joker.debuffed_by_blind = false
+                            joker:set_debuff(false)
+                            joker:juice_up()
+                        end
+                        return true
                     end
-                    blind.effect.extra.debuffed_joker = nil
                     if context.scoring_name == G.GAME.current_round.most_played_poker_hand and not context.end_of_round then
-                        blind.effect.extra.debuffed_joker = pseudorandom_element(G.jokers.cards,"ix_the_nihility")
-                        blind.effect.extra.debuffed_joker.debuffed_by_blind = true
-                        blind.effect.extra.debuffed_joker:set_debuff(true)
-                        blind.effect.extra.debuffed_joker:juice_up()
+                        local non_debuffed_jokers = {}
+                        for _, joker in pairs(G.jokers.cards) do
+                            if not joker.debuffed_by_blind then
+                                table.insert(non_debuffed_jokers, joker)
+                            end
+                        end
+                        if #non_debuffed_jokers == 0 then
+                            return true
+                        end
+                        local debuffed_joker = pseudorandom_element(non_debuffed_jokers, "ix_the_nihility")
+                        debuffed_joker.debuffed_by_blind = true
+                        debuffed_joker:set_debuff(true)
+                        debuffed_joker:juice_up()
+                        table.insert(blind.effect.extra.debuffed_jokers, debuffed_joker)
                         blind:wiggle()
                     end
                     return true
@@ -54,9 +69,11 @@ SMODS.Blind {
         end
     end,
     disable = function(self)
-        G.GAME.blind.effect.extra.debuffed_joker.debuffed_by_blind = false
-        G.GAME.blind.effect.extra.debuffed_joker:set_debuff(false)
-        G.GAME.blind.effect.extra.debuffed_joker:juice_up()
+        for _, joker in pairs(G.GAME.blind.effect.extra.debuffed_jokers) do
+            joker.debuffed_by_blind = false
+            joker:set_debuff(false)
+            joker:juice_up()
+        end
     end,
     loc_vars = function(self)
         return {
