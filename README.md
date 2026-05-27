@@ -20,7 +20,7 @@ Played **7s** give **+7** Chips and **+7** Mult when scored
 ### Earthly Escapade
 <img src="assets/2x/joker/earthly_escapade.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-Randomly gives **+30** Chips, **+4** Mult, **$3**, or **X2** Mult when scored
+Randomly gives **+60** Chips, **+8** Mult, **$4**, or **X2** Mult when scored
 
 ### Echoes of the Coffin
 <img src="assets/2x/joker/echoes_of_the_coffin.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">

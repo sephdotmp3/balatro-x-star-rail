@@ -23,9 +23,9 @@ SMODS.Joker {
     atlas = "joker_earthly_escapade",
     config = {
         extra = {
-            chips = 30,
-            mult = 4,
-            dollars = 3,
+            chips = 60,
+            mult = 8,
+            dollars = 4,
             xmult = 2
         }
     },
