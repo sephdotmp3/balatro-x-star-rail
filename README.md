@@ -30,7 +30,7 @@ At the end of the round, gives **$1** for every **5** cards remaining in the **d
 ### I Venture Forth To Hunt
 <img src="assets/2x/joker/i_venture_forth_to_hunt.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-Enhanced cards give **+25** Chips when scored
+Enhanced cards give **+30** Chips when scored
 
 ### If Time Were A Flower
 <img src="assets/2x/joker/if_time_were_a_flower.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
