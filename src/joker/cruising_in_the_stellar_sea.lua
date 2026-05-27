@@ -31,7 +31,6 @@ SMODS.Joker {
     cost = 20,
     blueprint_compat = true,
     calculate = function(self, card, context)
-        -- TODO: figure out why jokers aren't accounted for
         if context.individual and (context.cardarea == G.play or context.cardarea == G.hand) then
             ---@diagnostic disable-next-line: param-type-mismatch
             if not context.end_of_round and (next(SMODS.get_enhancements(context.other_card)) or context.other_card.seal or context.other_card.edition) then
