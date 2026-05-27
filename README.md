@@ -183,7 +183,7 @@ Start with a random number of hands and discards, reward and required score is r
 Divide base Mult by number of cards played
 
 ### The Harmony
-TODO: gif for this
+<img src="readme-assets/harmony.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
 All played cards must have the same rank or suit
 
