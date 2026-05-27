@@ -283,10 +283,9 @@ return {
 			j_bxsr_cruising_in_the_stellar_sea = {
 				name = "Cruising in the Stellar Sea",
 				text = {
-					"Every Enhanced Joker,",
-					"Enhanced card played",
-					"and Enhanced card in your hand",
-					"gives {C:white,X:mult}X#1#{} Mult",
+					"Every {C:attention}card{} scored, {C:attention}card{} held in hand,",
+					"and {C:attention}Joker{} that is {C:attention}Enhanced{},",
+					"has a {C:attention}Seal{}, or {C:attention}Edition{} gives {C:white,X:mult}X#1#{} Mult",
 					"{s:0.8,C:inactive}THEY cruise with the speed of a rainbow's chromatic flash.",
 					"{s:0.8,C:inactive}A journey of hunting undying abominations,",
 					"{s:0.8,C:inactive}collecting cures and miracles,",

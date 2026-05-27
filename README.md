@@ -143,7 +143,7 @@ Gives $ logarithmically based on how much you scored over the **Blind's** requir
 ### Cruising in the Stellar Sea
 <img src="assets/2x/joker/cruising_in_the_stellar_sea.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-Every Enhanced Joker, Enhanced card played, and Enhanced card in your hand gives **X1.5** Mult
+Every **card** scored, **card** held in hand, and **Joker** that is **Enhanced**, has a **Seal**, or **Edition** gives **X1.5** Mult
 
 ### Memory's Curtain Never Falls
 <img src="assets/2x/joker/memorys_curtain_never_falls.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">

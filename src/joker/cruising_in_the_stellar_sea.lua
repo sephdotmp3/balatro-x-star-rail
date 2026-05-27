@@ -32,14 +32,19 @@ SMODS.Joker {
     blueprint_compat = true,
     calculate = function(self, card, context)
         -- TODO: figure out why jokers aren't accounted for
-        if context.individual and (context.cardarea == G.play or context.cardarea == G.hand or context.cardarea == G.jokers) then
+        if context.individual and (context.cardarea == G.play or context.cardarea == G.hand) then
             ---@diagnostic disable-next-line: param-type-mismatch
-            if not context.end_of_round and next(SMODS.get_enhancements(context.other_card)) then
+            if not context.end_of_round and (next(SMODS.get_enhancements(context.other_card)) or context.other_card.seal or context.other_card.edition) then
                 return {
                     xmult = card.ability.extra.xmult,
                     card = card
                 }
             end
+        elseif context.other_joker and context.other_joker.edition and not context.end_of_round then
+            return {
+                xmult = card.ability.extra.xmult,
+                card = card
+            }
         end
     end,
     loc_vars = function(self, info_queue, card)
