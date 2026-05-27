@@ -24,7 +24,7 @@ SMODS.Joker {
     config = {
         extra = {
             mult = 0,
-            mult_gain = 2,
+            mult_gain = 1,
             mult_multiplier = 1.5,
         }
     },
@@ -35,19 +35,13 @@ SMODS.Joker {
     perishable_compat = false,
     calculate = function(self, card, context)
         if context.before and not context.blueprint then
-            local debuffed_tally = 0
-            for _, v in pairs(context.full_hand) do
-                if v.debuff then
-                    debuffed_tally = debuffed_tally + 1
-                end
-            end
-            if debuffed_tally > 0 then
+            if G.GAME.blind.boss then
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
                     ref_value = "mult",
-                    scalar_value = "mult_gain",
+                    scalar_value = "mult_multiplier",
                     operation = function (ref_table, ref_value, initial, change)
-                        ref_table[ref_value] = math.ceil((initial + change)*(card.ability.extra.mult_multiplier^debuffed_tally))
+                        ref_table[ref_value] = initial * change
                     end,
                     scaling_message = {
                         message = "Weep for the departed.",

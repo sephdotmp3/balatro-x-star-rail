@@ -112,7 +112,7 @@ This Joker gives **+1** Mult for every **2%** score below the blind's required s
 ### Along The Passing Shore
 <img src="assets/2x/joker/along_the_passing_shore.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-This Joker gains **+2** Mult per played hand, every debuffed card in played hand multiplies this tally by **1.5x**
+This Joker gains **+1** Mult per hand played, playing a hand during a **Boss Blind** multiplies total Mult gained by **1.5x** instead
 
 ### But the Battle Isn't Over
 <img src="assets/2x/joker/but_the_battle_isnt_over.png" width=142 height=190 style="image-rendering: pixelated; image-rendering: crisp-edges;">

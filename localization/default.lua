@@ -95,9 +95,9 @@ return {
 			j_bxsr_along_the_passing_shore = {
 				name = "Along The Passing Shore",
 				text = {
-					"This Joker gains {C:mult}+#2#{} Mult per played hand,",
-					"every debuffed card in played hand",
-					"multiplies this tally by #3#x",
+					"This Joker gains {C:mult}+#2#{} Mult per hand played,",
+					"playing a hand during a {C:attention}Boss Blind{} multiplies",
+					"total Mult gained by {C:attention}#3#x{} instead",
 					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult){}",
 				},
 			},
