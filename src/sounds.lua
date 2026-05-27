@@ -27,6 +27,11 @@ SMODS.Sound {
 }
 
 SMODS.Sound {
+    key = "aha_entrance",
+    path = "aha_entrance.wav"
+}
+
+SMODS.Sound {
     key = "the_hunt_targeted",
     path = "the_hunt_targeted.wav",
 }

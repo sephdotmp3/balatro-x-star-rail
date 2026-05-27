@@ -48,11 +48,13 @@ SMODS.Joker {
                 }))
                 return {
                     message = "+1 Joker Slot",
-                    colour = G.C.DARK_EDITION
+                    colour = G.C.DARK_EDITION,
+                    sound = "bxsr_aha_entrance"
                 }
             elseif selection <= 0.3333 then
                 return {
-                    dollars = card.ability.extra.dollars
+                    dollars = card.ability.extra.dollars,
+                    sound = "bxsr_aha_entrance"
                 }
             elseif selection <= 0.5 then
                 for _ = 1, card.ability.extra.rare_joker_count do
@@ -65,25 +67,35 @@ SMODS.Joker {
                 end
                 return {
                     message = "+"..tostring(card.ability.extra.rare_joker_count).." Jokers",
-                    colour = G.C.RARITY[3]
+                    colour = G.C.RARITY[3],
+                    sound = "bxsr_aha_entrance"
                 }
             elseif selection <= 0.6667 then
                 SMODS.upgrade_poker_hands({
                     level_up = card.ability.extra.poker_hand_levels,
-                    from = card
+                    from = card,
+                    instant = true
                 })
-                return
+                return {
+                    message = "+3 Levels",
+                    colour = G.C.SECONDARY_SET.Planet,
+                    sound = "bxsr_aha_entrance"
+                }
             elseif selection <= 0.8333 then
+                G.GAME.round_resets.hands = G.GAME.round_resets.hands + card.ability.extra.hands
                 ease_hands_played(card.ability.extra.hands)
                 return {
                     message = "+"..tostring(card.ability.extra.hands).." Hands",
-                    colour = G.C.BLUE
+                    colour = G.C.BLUE,
+                    sound = "bxsr_aha_entrance"
                 }
             else
+                G.GAME.round_resets.discards = G.GAME.round_resets.discards + card.ability.extra.discards
                 ease_discard(card.ability.extra.discards)
                 return {
                     message = "+"..tostring(card.ability.extra.discards).." Discards",
-                    colour = G.C.RED
+                    colour = G.C.RED,
+                    sound = "bxsr_aha_entrance"
                 }
             end
         end
