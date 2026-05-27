@@ -180,7 +180,7 @@ Start with a random number of hands and discards, reward and required score is r
 ### The Erudition
 <img src="readme-assets/erudition.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-Must play (most played hand) on odd hands, but cannot play (most played hand) on even hands
+Divide base Mult by number of cards played
 
 ### The Harmony
 TODO: gif for this

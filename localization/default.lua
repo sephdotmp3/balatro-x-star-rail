@@ -323,10 +323,8 @@ return {
 			bl_bxsr_erudition = {
 				name = "The Erudition",
 				text = {
-					"Must play #1#",
-					"on odd hands,",
-					"but cannot play #1#",
-					"on even hands",
+					"Divide base Mult by",
+					"number of cards played"
 				},
 			},
 			bl_bxsr_remembrance = {
