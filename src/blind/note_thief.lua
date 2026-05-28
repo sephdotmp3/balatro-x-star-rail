@@ -27,7 +27,7 @@ SMODS.Blind {
     },
     config = {
         extra = {
-            blind_increase_percent = 7,
+            blind_increase_percent = 12,
             recorded_cards = {}
         }
     },

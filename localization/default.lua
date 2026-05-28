@@ -417,7 +417,7 @@ return {
         		text = {
 					"Every unique card",
 					"played increases this",
-					"blind's score by 10%",
+					"blind's score by #1#%",
         		}
 			},
     		bl_bxsr_relative_tracer = {

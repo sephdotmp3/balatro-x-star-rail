@@ -231,7 +231,7 @@ After play, randomly destroys played hand, all cards in hand, or a random Joker
 ### Note Thief
 <img src="readme-assets/note_thief.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
 
-Every unique card played increases this blind's score by 10%
+Every unique card played increases this blind's score by 12%
 
 ### Relative Tracer
 <img src="readme-assets/relative_tracer.gif" width=68 height=68 style="image-rendering: pixelated; image-rendering: crisp-edges;">
