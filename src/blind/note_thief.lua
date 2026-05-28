@@ -89,7 +89,10 @@ SMODS.Blind {
 
         return mult, hand_chips, false
     end,
-    -- TODO: handle disabling of blind
+    disable = function (self)
+        G.GAME.blind.chips = G.GAME.blind.chips/((1+G.GAME.blind.effect.extra.blind_increase_percent/100)^#G.GAME.blind.effect.extra.recorded_cards)
+        G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+    end,
     loc_vars = function(self)
         return {
             vars = {
