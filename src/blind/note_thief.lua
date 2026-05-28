@@ -95,5 +95,12 @@ SMODS.Blind {
                 self.config.extra.blind_increase_percent
             }
         }
+    end,
+    collection_loc_vars = function(self)
+        return {
+            vars = {
+                self.config.extra.blind_increase_percent
+            }
+        }
     end
 }
