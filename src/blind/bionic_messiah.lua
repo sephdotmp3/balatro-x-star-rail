@@ -31,6 +31,7 @@ SMODS.Blind {
             total_score_increase = 0,
         }
     },
+    dollars = 8,
     boss_colour = HEX("d4b744"),
     calculate = function(self, blind, context)
         if context.after and context.scoring_name == G.GAME.current_round.most_played_poker_hand then

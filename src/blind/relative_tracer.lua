@@ -30,6 +30,7 @@ SMODS.Blind {
             first_hand_cards = {}
         }
     },
+    dollars = 8,
     boss_colour = HEX("d4b744"),
     press_play = function(self)
         G.E_MANAGER:add_event(Event({

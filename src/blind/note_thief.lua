@@ -31,6 +31,7 @@ SMODS.Blind {
             recorded_cards = {}
         }
     },
+    dollars = 8,
     boss_colour = HEX("c45cd6"),
     modify_hand = function(self, cards, poker_hands, text, mult, hand_chips)
         local prev_recorded_cards = #G.GAME.blind.effect.extra.recorded_cards

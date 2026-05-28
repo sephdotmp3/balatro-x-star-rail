@@ -25,6 +25,7 @@ SMODS.Blind {
     boss = {
         showdown = true
     },
+    dollars = 8,
     boss_colour = HEX("d4b744"),
     bxsr_after_play = function(self)
         if not G.GAME.blind.disabled then

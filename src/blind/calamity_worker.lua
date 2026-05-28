@@ -31,6 +31,7 @@ SMODS.Blind {
             new_cards = {}
         }
     },
+    dollars = 8,
     boss_colour = HEX("c45cd6"),
     set_blind = function(self)
         if G.GAME.blind.disabled then
