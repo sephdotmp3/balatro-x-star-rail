@@ -30,9 +30,9 @@ SMODS.Blind {
     bxsr_after_play = function(self)
         if not G.GAME.blind.disabled then
             local selection = pseudorandom("destruction_x_elation")
-            if selection <= 0.3333 then
+            if selection <= 0.3333 or (selection <= 0.5 and #G.jokers.cards == 0) then
                 SMODS.destroy_cards(G.play.cards)
-            elseif selection <= 0.6667 then
+            elseif selection <= 0.6667 or #G.jokers.cards == 0 then
                 SMODS.destroy_cards(G.hand.cards)
             else
                 SMODS.destroy_cards(pseudorandom_element(G.jokers.cards,"elation_x_destruction"))
