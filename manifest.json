@@ -11,6 +11,7 @@
 	"priority": 0,
 	"badge_colour": "49bce9",
 	"badge_text_colour": "ffffff",
+	"icon_path": "icon.png",
 	"version": "0.0.0-alpha",
 	"dependencies": [
 		"Steamodded (>=1.*~)"
