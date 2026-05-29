@@ -5,10 +5,16 @@ Obtain Light Cone Jokers in order to survive the new Path-themed boss blinds!
 
 "*Bust? Or... maybe **I'll take it ALL!***"
 
-**This mod is currently in a pre-alpha state and should not be used for regular gameplay.**
-
 # Installation
 Place the [latest release](https://github.com/sephdotmp3/balatro-x-star-rail/releases) in your `mods` folder or `git clone https://github.com/sephdotmp3/balatro-x-star-rail/` it into your `mods` folder.
+
+Integration with the [Balatro Mod Manager](https://github.com/skyline69/balatro-mod-manager) is not implemented, but will be present in the future.
+
+# Reporting Bugs/Giving Feedback
+If you encounter any bugs or have feedback on the balance of this mod, please create [an issue](https://github.com/sephdotmp3/balatro-x-star-rail/issues) with as much detail as you can spare (i.e, steps needed to reproduce the bug, what version of Steamodded you're on, etc.).
+
+# Known Issues
+- Note Thief, Relative Tracer and Remembrance Blinds do not respect Smudged Joker and probably behave a little weirdly when dealing with other special suit-related effects.
 
 # New Jokers
 ## Common Jokers
